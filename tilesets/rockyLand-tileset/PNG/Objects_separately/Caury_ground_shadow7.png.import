@@ -1,0 +1,42 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<< HEAD
+uid="uid://e7jdh85f5k8p"
+=======
+uid="uid://cwymv44yy057m"
+>>>>>>> 9add64083822397e6a9b93048c9866a2af75d24c
+=======
+uid="uid://biiyp2nbk2wi4"
+>>>>>>> pr/8
+path="res://.godot/imported/Caury_ground_shadow7.png-bde41aa987c2f701dec9cdac4f4379ae.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://tilesets/rockyLand-tileset/PNG/Objects_separately/Caury_ground_shadow7.png"
+dest_files=["res://.godot/imported/Caury_ground_shadow7.png-bde41aa987c2f701dec9cdac4f4379ae.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
