@@ -1,0 +1,42 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<< HEAD
+uid="uid://dis76fejkctvx"
+=======
+uid="uid://btf5um0ad4p3o"
+>>>>>>> 9add64083822397e6a9b93048c9866a2af75d24c
+=======
+uid="uid://sbo8j4tby6lj"
+>>>>>>> pr/8
+path="res://.godot/imported/char_a_p1B_2clo_lnpl_v07.png-0553ff0a867d7558caceb99d88eb751d.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://art/Player/20.05d - Cloak & Hood 1.3 (comp. v01)/optional files (unsupported)/char_a_p1B/2clo/char_a_p1B_2clo_lnpl_v07.png"
+dest_files=["res://.godot/imported/char_a_p1B_2clo_lnpl_v07.png-0553ff0a867d7558caceb99d88eb751d.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

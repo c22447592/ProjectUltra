@@ -1,0 +1,42 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<< HEAD
+uid="uid://cfmofugo7i21t"
+=======
+uid="uid://r4ukc6dlp824"
+>>>>>>> 9add64083822397e6a9b93048c9866a2af75d24c
+=======
+uid="uid://bjvtj6imqykqv"
+>>>>>>> pr/8
+path="res://.godot/imported/Bone_element_grass_shadow1.png-ae62d7dc16c60f3136b26e34ac16bbdf.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://tilesets/desert-tileset/PNG/Objects_separately/Bone_element_grass_shadow1.png"
+dest_files=["res://.godot/imported/Bone_element_grass_shadow1.png-ae62d7dc16c60f3136b26e34ac16bbdf.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

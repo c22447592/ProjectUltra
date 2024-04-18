@@ -1,0 +1,42 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<< HEAD
+uid="uid://cfoiiv6fy6myb"
+=======
+uid="uid://b0l5nyw6hgogv"
+>>>>>>> 9add64083822397e6a9b93048c9866a2af75d24c
+=======
+uid="uid://b1amylfrn8enb"
+>>>>>>> pr/8
+path="res://.godot/imported/layer order, page BOW 3 (bow).png-8e451b272da4813211a22ef741f1b45e.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://art/Player/20.08b - Bow Combat 3.2/guides/layer order, page BOW 3 (bow).png"
+dest_files=["res://.godot/imported/layer order, page BOW 3 (bow).png-8e451b272da4813211a22ef741f1b45e.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

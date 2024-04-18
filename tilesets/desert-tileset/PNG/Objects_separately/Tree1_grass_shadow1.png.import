@@ -1,0 +1,42 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD
+<<<<<<< HEAD
+uid="uid://dooxoapuuyv2a"
+=======
+uid="uid://bngsmuenn8q64"
+>>>>>>> 9add64083822397e6a9b93048c9866a2af75d24c
+=======
+uid="uid://bu75g80ap63st"
+>>>>>>> pr/8
+path="res://.godot/imported/Tree1_grass_shadow1.png-dd83eb3adf701f1886ebab786afb6787.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://tilesets/desert-tileset/PNG/Objects_separately/Tree1_grass_shadow1.png"
+dest_files=["res://.godot/imported/Tree1_grass_shadow1.png-dd83eb3adf701f1886ebab786afb6787.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
