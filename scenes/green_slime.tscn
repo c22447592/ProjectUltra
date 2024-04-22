@@ -67,11 +67,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"static",
-"speed": 2.0
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecjaw"]
-radius = 5.0
+radius = 8.06226
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5c7w"]
 radius = 32.0156
@@ -82,20 +82,20 @@ script = ExtResource("1_hpr1c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xmx77")
 animation = &"static"
-frame_progress = 0.507216
+frame_progress = 0.596728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_ecjaw")
 
 [node name="detectionArea" type="Area2D" parent="."]
+position = Vector2(0, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-position = Vector2(0, 2)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_v5c7w")
 
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]

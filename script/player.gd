@@ -1,10 +1,22 @@
 extends CharacterBody2D
-var speed = 80
+var speed = 100
+var player_health = 150
 var player_state
 
+var player_alive = true
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+
 func _physics_process(delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
+	enemy_attack()
 	
+	if player_health <= 0:
+		player_alive = false
+		player_health = 0
+		$AnimatedSprite2D.play("death")
+		print("You have been vanquished.")
+	
+	var direction = Input.get_vector("left", "right", "up", "down")
 	if direction.x == 0 and direction.y == 0:
 		player_state = "idle"
 	elif direction.x != 0 or direction.y != 0:
@@ -27,3 +39,25 @@ func play_anim(dir):
 			$AnimatedSprite2D.play("walk-right")
 		if dir.x == -1:
 			$AnimatedSprite2D.play("walk-left")
+
+func player():
+	pass
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+		
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown == true:
+		player_health = player_health - 20
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(player_health)
+		
+func _on_attack_cooldown_timeout():
+	enemy_attack_cooldown = true
+

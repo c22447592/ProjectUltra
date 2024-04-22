@@ -1,39 +1,26 @@
 extends CharacterBody2D
 
-var speed = 16
-var health = 100
-var damage
+var slime_health = 50
+var speed = 25
+var player_chase = false
+var player = null
 
-var dead = false
-var player_in_area = false
-var player
-
-func _ready():
-	dead = false
-	
 func _physics_process(delta):
-	if !dead:
-		$detetction_area/CollisionShape2D.disabled = false
-		if player_in_area:
-			position += (player.position - position) / speed
-			$AnimatedSprite2D.play("move")
-		else:
-			$AnimatedSprite2D.play("static")
-			
-	if dead:
-		$detectionArea/CollisionShape2D.disabled = true
-		
+	if player_chase:
+		position += (player.position - position)/speed
+		$AnimatedSprite2D.play("move")
+	else:
+		$AnimatedSprite2D.play("static")
 
 func _on_detection_area_body_entered(body):
-	if body.has_method("player"):
-		player_in_area = true
-		player = body
+	player = body
+	player_chase = true
 
 func _on_detection_area_body_exited(body):
-	if body.has_method("player"):
-		player_in_area = false
-		
-		
-#stopped @ 10:30 second of video as arrow not part of my work.
-#link to video
+	player = null
+	player_chase = false
+	
+func enemy():
+	pass
+
 #https://youtu.be/pZNg4bpi1u4?si=_VPNMEyOOZw5NFH3&t=628
