@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="ProjectUltra"
+run/main_scene="res://scenes/thePlayer.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=3.0
 
 [editor]
 
