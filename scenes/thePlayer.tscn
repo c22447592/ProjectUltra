@@ -441,7 +441,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6lv0y")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk-sideways",
 "speed": 6.0
 }, {
@@ -464,7 +464,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eiegl")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk-up",
 "speed": 6.0
 }]
@@ -476,6 +476,4 @@ script = ExtResource("3_muai6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eg8gd")
-animation = &"walk-up"
-frame = 5
-frame_progress = 1.0
+animation = &"attack-spear-down"
