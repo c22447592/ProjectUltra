@@ -1,7 +1,8 @@
-[gd_scene load_steps=60 format=3 uid="uid://dslejir40ph3w"]
+[gd_scene load_steps=61 format=3 uid="uid://dslejir40ph3w"]
 
 [ext_resource type="Texture2D" uid="uid://dmddp1sgxhb6e" path="res://Player/Player-combat.png" id="1_ujshb"]
 [ext_resource type="Texture2D" uid="uid://33uvoo4imlby" path="res://Player/Player-movement.png" id="2_hufh0"]
+[ext_resource type="Script" path="res://script/player.gd" id="3_muai6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ankxf"]
 atlas = ExtResource("1_ujshb")
@@ -143,15 +144,15 @@ region = Rect2(192, 192, 64, 64)
 atlas = ExtResource("2_hufh0")
 region = Rect2(256, 192, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnph5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4y16"]
 atlas = ExtResource("2_hufh0")
 region = Rect2(384, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_33x82"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_00bwe"]
 atlas = ExtResource("2_hufh0")
 region = Rect2(384, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o0o4n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrpge"]
 atlas = ExtResource("2_hufh0")
 region = Rect2(384, 128, 64, 64)
 
@@ -376,7 +377,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dnph5")
+"texture": SubResource("AtlasTexture_g4y16")
 }],
 "loop": true,
 "name": &"idle-back",
@@ -384,7 +385,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_33x82")
+"texture": SubResource("AtlasTexture_00bwe")
 }],
 "loop": true,
 "name": &"idle-front",
@@ -392,10 +393,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o0o4n")
+"texture": SubResource("AtlasTexture_yrpge")
 }],
 "loop": true,
-"name": &"idle-side",
+"name": &"idle-sideways",
 "speed": 6.0
 }, {
 "frames": [{
@@ -417,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wvuls")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk-down",
 "speed": 6.0
 }, {
@@ -469,10 +470,12 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("3_muai6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eg8gd")
-animation = &"attack-spear-down"
-frame_progress = 0.157869
+animation = &"walk-up"
+frame = 5
+frame_progress = 1.0
