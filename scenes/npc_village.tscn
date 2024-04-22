@@ -1,22 +1,22 @@
 [gd_scene load_steps=38 format=3 uid="uid://bhgc8lvsqv5ou"]
 
 [ext_resource type="Script" path="res://script/npc_village.gd" id="1_ta2s6"]
-[ext_resource type="Texture2D" uid="uid://cnxj7f5xkvc0h" path="res://tilesets/forest-tileset/PNG/Ground_grass.png" id="2_1imyf"]
-[ext_resource type="PackedScene" uid="uid://ccqixd71au2xk" path="res://scenes/test_player.tscn" id="2_y2vlp"]
-[ext_resource type="Texture2D" uid="uid://oxmuc4pc8fw8" path="res://tilesets/forest-tileset/PNG/Objects.png" id="3_5iioy"]
-[ext_resource type="Texture2D" uid="uid://bv1r0v08emt0g" path="res://tilesets/grassland-tileset/PNG/Water_coasts.png" id="4_7nbcd"]
-[ext_resource type="Texture2D" uid="uid://dhcfj5p5xhcvh" path="res://tilesets/grassland-tileset/PNG/water_detilazation.png" id="5_3035o"]
-[ext_resource type="Texture2D" uid="uid://cdv1b1px60vfs" path="res://tilesets/grassland-tileset/PNG/water_detilazation_v2.png" id="6_vscgg"]
-[ext_resource type="Texture2D" uid="uid://bviuomngsc4jh" path="res://Buildings/green-village/All Tileset/16x16.png" id="7_3itl5"]
-[ext_resource type="Texture2D" uid="uid://bgq1j57bhdv3k" path="res://tilesets/forest-tileset/PNG/spots_lianas.png" id="7_5np67"]
-[ext_resource type="Texture2D" uid="uid://utwlyyepnkt4" path="res://tilesets/farmland-tileset/All Tileset/16x16.png" id="8_5yhnw"]
-[ext_resource type="Texture2D" uid="uid://cmryvhdaymu7r" path="res://tilesets/forest-tileset/PNG/Water_coasts.png" id="8_qpi1l"]
-[ext_resource type="Texture2D" uid="uid://dd5yi6l4isix8" path="res://tilesets/forest-tileset/PNG/water_detilazation.png" id="9_0v2s3"]
-[ext_resource type="Texture2D" uid="uid://bcw5oeljtf56i" path="res://tilesets/forest-tileset/PNG/water_detilazation_v2.png" id="10_2lo3f"]
-[ext_resource type="Texture2D" uid="uid://dwpua76x4dp1p" path="res://tilesets/forest-tileset/PNG/Water_lilis.png" id="11_g3jcf"]
-[ext_resource type="Texture2D" uid="uid://ceqbylmprcl02" path="res://tilesets/grassland-tileset/PNG/Details.png" id="12_r2a3l"]
-[ext_resource type="Texture2D" uid="uid://b3wuurai0fndo" path="res://tilesets/grassland-tileset/PNG/ground_grasss.png" id="13_ggyvv"]
-[ext_resource type="Texture2D" uid="uid://b5s5y3nfh1r0w" path="res://tilesets/grassland-tileset/PNG/Trees_rocks.png" id="14_t7jrf"]
+[ext_resource type="Texture2D" uid="uid://clq2q68gkhb6w" path="res://tilesets/forest-tileset/PNG/Ground_grass.png" id="2_1imyf"]
+[ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_y2vlp"]
+[ext_resource type="Texture2D" uid="uid://1nxhlm4823w8" path="res://tilesets/forest-tileset/PNG/Objects.png" id="3_5iioy"]
+[ext_resource type="Texture2D" uid="uid://wya4efi8r8jc" path="res://tilesets/grassland-tileset/PNG/Water_coasts.png" id="4_7nbcd"]
+[ext_resource type="Texture2D" uid="uid://d0drkh1lyexhc" path="res://tilesets/grassland-tileset/PNG/water_detilazation.png" id="5_3035o"]
+[ext_resource type="Texture2D" uid="uid://bc28kpfdkfeba" path="res://tilesets/grassland-tileset/PNG/water_detilazation_v2.png" id="6_vscgg"]
+[ext_resource type="Texture2D" uid="uid://dvotmhp0rj8hj" path="res://tilesets/craftpix-net-520331-green-village-top-down-pixel-art-tileset/All Tileset/16x16.png" id="7_3itl5"]
+[ext_resource type="Texture2D" uid="uid://b057mi318mbl6" path="res://tilesets/forest-tileset/PNG/spots_lianas.png" id="7_5np67"]
+[ext_resource type="Texture2D" uid="uid://db4ho33vypy4b" path="res://tilesets/craftpix-net-649551-top-down-farmlands-tileset-pixel-art/All Tileset/16x16.png" id="8_5yhnw"]
+[ext_resource type="Texture2D" uid="uid://b3yrauo48i6m" path="res://tilesets/forest-tileset/PNG/Water_coasts.png" id="8_qpi1l"]
+[ext_resource type="Texture2D" uid="uid://c2tqugyasq8e2" path="res://tilesets/forest-tileset/PNG/water_detilazation.png" id="9_0v2s3"]
+[ext_resource type="Texture2D" uid="uid://12nqt04angkw" path="res://tilesets/forest-tileset/PNG/water_detilazation_v2.png" id="10_2lo3f"]
+[ext_resource type="Texture2D" uid="uid://bbqhqd5lpbwek" path="res://tilesets/forest-tileset/PNG/Water_lilis.png" id="11_g3jcf"]
+[ext_resource type="Texture2D" uid="uid://bpybyjy701qxk" path="res://tilesets/grassland-tileset/PNG/Details.png" id="12_r2a3l"]
+[ext_resource type="Texture2D" uid="uid://c4sncqs3d6m7y" path="res://tilesets/grassland-tileset/PNG/ground_grasss.png" id="13_ggyvv"]
+[ext_resource type="Texture2D" uid="uid://osplf5djyxfd" path="res://tilesets/grassland-tileset/PNG/Trees_rocks.png" id="14_t7jrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf2yx"]
 texture = ExtResource("2_1imyf")
@@ -22112,15 +22112,16 @@ size = Vector2(65, 20)
 [node name="npcVillageScene" type="Node2D"]
 script = ExtResource("1_ta2s6")
 
-[node name="player" parent="." instance=ExtResource("2_y2vlp")]
+[node name="thePlayer" parent="." instance=ExtResource("2_y2vlp")]
+z_index = 1
 position = Vector2(-2, -47)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
+[node name="Camera2D" type="Camera2D" parent="thePlayer"]
+zoom = Vector2(2.5, 2.5)
 limit_left = -430
 limit_top = -427
 limit_right = 447
-limit_bottom = -33
+limit_bottom = -17
 limit_smoothed = true
 
 [node name="TileMap" type="TileMap" parent="."]
