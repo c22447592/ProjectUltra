@@ -22098,7 +22098,7 @@ sources/14 = SubResource("TileSetAtlasSource_p5s48")
 sources/15 = SubResource("TileSetAtlasSource_c13qt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6onc"]
-size = Vector2(75, 30.75)
+size = Vector2(75, 20.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6k7l"]
 size = Vector2(20, 78)
@@ -22114,7 +22114,8 @@ script = ExtResource("1_ta2s6")
 
 [node name="thePlayer" parent="." instance=ExtResource("2_y2vlp")]
 z_index = 1
-position = Vector2(-2, -47)
+
+position = Vector2(5, -62)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -22139,16 +22140,14 @@ layer_4/z_index = 3
 layer_4/tile_data = PackedInt32Array(-1245194, 655374, 7, -1310729, 589838, 8, -1310731, 589838, 8, -1376266, 917518, 7, -1310738, 655374, 5, -1638417, 524302, 9, -1376275, 524302, 8, -1441810, 917518, 6, -786430, 327694, 4, -1507331, 327694, 4, -1310746, 327694, 4, -1376230, 327694, 4, -655383, 1179663, 4, -655378, 1179663, 4, -786458, 524303, 1, -1376278, 917519, 6, -1441814, 917519, 6, -1507350, 917519, 6, -1376280, 196622, 4, -1638424, 851983, 6, -1507352, 851983, 6, -1572886, 917519, 6, -1638422, 917519, 6, -1441816, 851983, 6, -1572888, 851983, 6, -327697, 1441807, 9, -327695, 1441807, 9, -851978, 1441807, 10, -786450, 851983, 9, -196631, 196622, 6, -262167, 196622, 5, -327703, 196622, 4, -327702, 262158, 4, -262166, 65550, 4, -1245208, 196622, 6, -1310744, 196622, 5, -1376279, 262158, 4, -1310743, 14, 4, -1310740, 14, 2, -1310711, 655374, 5, -1376248, 589838, 8, -1376246, 589838, 8, -1507316, 589838, 8, -1441783, 917518, 8, -1376250, 327694, 4, -720903, 655375, 31, -589831, 1048591, 31, -524295, 1441807, 35, -524303, 1441807, 37, -655370, 1441807, 39, -524307, 1835023, 33, -327691, 1048591, 31, -851982, 655375, 29, -458774, 1835023, 37, -589836, 786447, 25, -524299, 786447, 26, -1507337, 524302, 9, -1638394, 655374, 9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-429, -430, -29, -429, -28, -436, 29, -437, 31, -428, 444, -430, 446, -305, 456, -305, 457, -239, 443, -239, 446, -19, 46, -20, 46, -8, -21, -8, -25, -23, -428, -21, -428, -239, -441, -239, -440, -307, -426, -307, -429, -425, -485, -434, -488, -23, -404, 73, 507, 64, 514, -490, -483, -494, -485, -440)
 
 [node name="beachEntrance" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beachEntrance"]
-position = Vector2(10, -21)
+position = Vector2(10, -15.8125)
 shape = SubResource("RectangleShape2D_c6onc")
 
 [node name="westEntrance" type="Area2D" parent="."]
