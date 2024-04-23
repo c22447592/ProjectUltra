@@ -85,6 +85,8 @@ func play_anim(movement):
 			if attack_in_progress == false:
 				anim.play("idle-front")
 		
+	move_and_slide()
+		
 	#Movement type 2 (better for 8-directional movement)
 	#var direction = Input.get_vector("left", "right", "up", "down")
 	#if direction.x == 0 and direction.y == 0:

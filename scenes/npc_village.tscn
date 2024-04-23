@@ -22098,7 +22098,7 @@ sources/14 = SubResource("TileSetAtlasSource_p5s48")
 sources/15 = SubResource("TileSetAtlasSource_c13qt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6onc"]
-size = Vector2(75, 30.75)
+size = Vector2(75, 20.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6k7l"]
 size = Vector2(20, 78)
@@ -22114,15 +22114,7 @@ script = ExtResource("1_ta2s6")
 
 [node name="thePlayer" parent="." instance=ExtResource("2_y2vlp")]
 z_index = 1
-position = Vector2(-2, -47)
-
-[node name="Camera2D" type="Camera2D" parent="thePlayer"]
-zoom = Vector2(1.5, 1.5)
-limit_left = -430
-limit_top = -427
-limit_right = 447
-limit_bottom = -17
-limit_smoothed = true
+position = Vector2(5, -62)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -22153,10 +22145,9 @@ visible = false
 polygon = PackedVector2Array(-429, -430, -29, -429, -28, -436, 29, -437, 31, -428, 444, -430, 446, -305, 456, -305, 457, -239, 443, -239, 446, -19, 46, -20, 46, -8, -21, -8, -25, -23, -428, -21, -428, -239, -441, -239, -440, -307, -426, -307, -429, -425, -485, -434, -488, -23, -404, 73, 507, 64, 514, -490, -483, -494, -485, -440)
 
 [node name="beachEntrance" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="beachEntrance"]
-position = Vector2(10, -21)
+position = Vector2(10, -15.8125)
 shape = SubResource("RectangleShape2D_c6onc")
 
 [node name="westEntrance" type="Area2D" parent="."]
