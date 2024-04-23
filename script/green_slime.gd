@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var slime_health = 50
-var speed = 25
+var speed = 75
 
 var player_inattack_zone = false
 var player_chase = false

@@ -23,6 +23,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("death")
 		print("You have been vanquished.")
 		
+		
 #Movement type 1 (Uses different idle animations, is geared for 4-directional approach)
 func player_movement(delta):
 	#function for player movement

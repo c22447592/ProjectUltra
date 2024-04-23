@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://33uvoo4imlby" path="res://Player/Player-movement.png" id="2_hufh0"]
 [ext_resource type="Script" path="res://script/player.gd" id="3_muai6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_es4u4"]
-size = Vector2(15, 20)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_or38b"]
 atlas = ExtResource("1_ujshb")
 region = Rect2(0, 320, 64, 64)
@@ -470,7 +467,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 3.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -598,19 +595,32 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fhbx"]
-size = Vector2(15, 8)
+size = Vector2(13, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es4u4"]
+size = Vector2(15, 21)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("3_muai6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_eg8gd")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_3fhbx")
 
 [node name="player_hitbox" type="Area2D" parent="."]
 z_index = 2
 y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
-position = Vector2(1.5, 5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_es4u4")
 
 [node name="attack_cooldown" type="Timer" parent="."]
@@ -621,15 +631,6 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.25
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_eg8gd")
-animation = &"death"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 14)
-shape = SubResource("RectangleShape2D_3fhbx")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
