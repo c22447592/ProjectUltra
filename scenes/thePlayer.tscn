@@ -608,6 +608,7 @@ script = ExtResource("3_muai6")
 [node name="player_hitbox" type="Area2D" parent="."]
 z_index = 2
 y_sort_enabled = true
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(1.5, 5)
@@ -615,9 +616,6 @@ shape = SubResource("RectangleShape2D_es4u4")
 
 [node name="attack_cooldown" type="Timer" parent="."]
 wait_time = 1.75
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
 
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.25

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://daqx0hyg33hid"]
+[gd_scene load_steps=39 format=3 uid="uid://daqx0hyg33hid"]
 
 [ext_resource type="Script" path="res://script/beach.gd" id="1_gajgq"]
 [ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_uue36"]
@@ -25473,20 +25473,8 @@ pattern_1 = SubResource("TileMapPattern_vri2q")
 pattern_2 = SubResource("TileMapPattern_e1qux")
 pattern_3 = SubResource("TileMapPattern_xowum")
 
-[sub_resource type="GDScript" id="GDScript_po63c"]
-script/source = "extends Node
-
-@export var connected_scene: String #name of scene to change to
-var scene_folder = \"res://scenes/\"
-
-func _on_exit_area_body_entered(body):
-	var full_path = scene_folder + connected_scene + \".tscn\"
-	var scene_tree = get_tree()
-	scene_tree.change_scene_to_file(full_path)
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ilk7o"]
-size = Vector2(96, 15)
+size = Vector2(96, 10)
 
 [node name="beachScene" type="Node2D"]
 y_sort_enabled = true
@@ -25494,13 +25482,6 @@ script = ExtResource("1_gajgq")
 metadata/_edit_horizontal_guides_ = [-22.0, -127.0]
 
 [node name="testPlayer" parent="." instance=ExtResource("2_uue36")]
-
-[node name="Camera2D" type="Camera2D" parent="testPlayer"]
-zoom = Vector2(1.5, 1.5)
-limit_left = -485
-limit_top = -265
-limit_right = 510
-limit_bottom = 225
 
 [node name="BeachMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -25530,11 +25511,11 @@ position = Vector2(13, 119)
 polygon = PackedVector2Array(-487, -376, -55, -377, -54, -390, 42, -390, 42, -378, 486, -378, 485, 125, -497, 125, -495, -376, -539, -376, -536, 177, 630, 181, 614, -447, -490, -463)
 
 [node name="exitArea" type="Area2D" parent="."]
-script = SubResource("GDScript_po63c")
-connected_scene = "npc_village"
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitArea"]
-position = Vector2(7, -264.5)
+position = Vector2(7, -267)
 shape = SubResource("RectangleShape2D_ilk7o")
 
 [connection signal="body_entered" from="exitArea" to="." method="_on_exit_area_body_entered"]
