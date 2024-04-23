@@ -1,7 +1,7 @@
 extends Panel
 @onready var backgroundSprite: Sprite2D=$Background
 
-@onready var ItemSprite: Sprite2D=$Item
+@onready var ItemSprite: Sprite2D=$CenterContainer/Panel/Item
 
 func update(item: InventoryItem):
 	if !item:
