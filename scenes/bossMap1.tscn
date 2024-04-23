@@ -7106,13 +7106,6 @@ layer_3/tile_data = PackedInt32Array(-393212, 1, 9, -327682, 1, 9, -393218, 1638
 [node name="thePlayer" parent="." instance=ExtResource("8_l7f6k")]
 position = Vector2(24, -21)
 
-[node name="Camera2D" type="Camera2D" parent="thePlayer"]
-zoom = Vector2(1.5, 1.5)
-limit_left = -325
-limit_top = -590
-limit_right = 350
-limit_bottom = 15
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]

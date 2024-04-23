@@ -25481,17 +25481,6 @@ y_sort_enabled = true
 script = ExtResource("1_gajgq")
 metadata/_edit_horizontal_guides_ = [-22.0, -127.0]
 
-[node name="testPlayer" parent="." instance=ExtResource("2_uue36")]
-z_index = 2
-
-[node name="Camera2D" type="Camera2D" parent="testPlayer"]
-scale = Vector2(1.07055, 1.06979)
-zoom = Vector2(1.5, 1.5)
-limit_left = -485
-limit_top = -262
-limit_right = 500
-limit_bottom = 233
-
 [node name="BeachMap" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(53, -153)
@@ -25524,5 +25513,11 @@ polygon = PackedVector2Array(-487, -376, -55, -377, -54, -390, 42, -390, 42, -37
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitArea"]
 position = Vector2(7, -267)
 shape = SubResource("RectangleShape2D_ilk7o")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_uue36")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(20, -25)
+motion_mode = 1
 
 [connection signal="body_entered" from="exitArea" to="." method="_on_exit_area_body_entered"]
