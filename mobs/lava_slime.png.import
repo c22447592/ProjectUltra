@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuorjkrankn"
-path="res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"
+uid="uid://y0ttsu27i15h"
+path="res://.godot/imported/lava_slime.png-73a8cdbcb0d0b8edf94229ede20d6a0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player-combat.png"
-dest_files=["res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"]
+source_file="res://mobs/lava_slime.png"
+dest_files=["res://.godot/imported/lava_slime.png-73a8cdbcb0d0b8edf94229ede20d6a0e.ctex"]
 
 [params]
 

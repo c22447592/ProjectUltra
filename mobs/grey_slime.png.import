@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuorjkrankn"
-path="res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"
+uid="uid://bix7w0me15ar0"
+path="res://.godot/imported/grey_slime.png-7d8c91b153fc9fa5429691b219877bcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player-combat.png"
-dest_files=["res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"]
+source_file="res://mobs/grey_slime.png"
+dest_files=["res://.godot/imported/grey_slime.png-7d8c91b153fc9fa5429691b219877bcc.ctex"]
 
 [params]
 

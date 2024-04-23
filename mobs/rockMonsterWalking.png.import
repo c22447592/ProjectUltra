@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsuorjkrankn"
-path="res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"
+uid="uid://dsffiylyrlvp8"
+path="res://.godot/imported/rockMonsterWalking.png-7d7bcb880bd2ec1f557ebb42ee843b5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Player-combat.png"
-dest_files=["res://.godot/imported/Player-combat.png-b11a034f035da7de207985af785c2a86.ctex"]
+source_file="res://mobs/rockMonsterWalking.png"
+dest_files=["res://.godot/imported/rockMonsterWalking.png-7d7bcb880bd2ec1f557ebb42ee843b5c.ctex"]
 
 [params]
 

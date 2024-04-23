@@ -1,69 +1,47 @@
 extends CharacterBody2D
+var speed = 100
+#var player_health = 250
+var player_state
 
-var health = 100
+@export var maxHealth=250
+@onready var player_health: int = maxHealth
+
 var player_alive = true
-var attack_in_progress = false
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 
-const speed = 100
-var current_dir = "none"
-
-var playerState #variable for which sprite to use
-
-#movement function
 func _physics_process(delta):
-	player_movement(delta)
 	enemy_attack()
 	
-	if health <= 0:
+	if player_health <= 0:
 		player_alive = false
-		health = 0
-		print("You have fallen...")
-		self.queue_free() #change this to transition to an end screen
-		
-	var direction = Input.get_vector("left", "right", "up", "down") #variable that takes in keyboard input
+		player_health = 0
+		$AnimatedSprite2D.play("death")
+		print("You have been vanquished.")
 	
-	# idle state
+	var direction = Input.get_vector("left", "right", "up", "down")
 	if direction.x == 0 and direction.y == 0:
-		playerState = "Idle"
-	else:
-		playerState = "walking"
-
+		player_state = "idle"
+	elif direction.x != 0 or direction.y != 0:
+		player_state = "walking"
+		
 	velocity = direction * speed
 	move_and_slide()
 	
-	#play_anim(direction, playerState)
-	
-func play_anim(movement):
-	var dir = current_dir
-	var anim = $AnimatedSprite2D
-	#left and right directional movement
-	if dir == "right":
-		anim.flip_h = false
-		if movement == 1:
-			anim.play("walk-sideways")
-		elif movement == 0:
-			anim.play("idle-side")
-	if dir == "left":
-		anim.flip_h = true
-		if movement == 1:
-			anim.play("walk-sideways")
-		elif movement == 0:
-			anim.play("idle-side")
-	#up and down directional movement
-	if dir == "up":
-		anim.flip_h = false
-		if movement == 1:
-			anim.play("walk-up")
-		elif movement == 0:
-			anim.play("idle-back")
-	if dir == "down":
-		anim.flip_h = false
-		if movement == 1:
-			anim.play("walk-down")
-		elif movement == 0:
-			anim.play("idle-front")
+	play_anim(direction)
+
+func play_anim(dir):
+	if player_state == "idle":
+		$AnimatedSprite2D.play("idle-front")
+	if player_state == "walking":
+		if dir.y == -1:
+			$AnimatedSprite2D.play("walk-up")
+		if dir.y == 1:
+			$AnimatedSprite2D.play("walk-down")
+		if dir.x == 1:
+			$AnimatedSprite2D.play("walk-right")
+		if dir.x == -1:
+			$AnimatedSprite2D.play("walk-left")
 
 func player():
 	pass
@@ -71,17 +49,22 @@ func player():
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
-	
+		player_health -=50
+		if player_health < 0:
+			player_health=maxHealth
+		print_debug(player_health)
+
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
-
+		
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health = health - 10
+		player_health = player_health - 20
 		enemy_attack_cooldown = false
-		$attackCooldown.start()
-		print("You have been hit, health is at ", health)
+		$attack_cooldown.start()
+		print(player_health)
 		
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
+
