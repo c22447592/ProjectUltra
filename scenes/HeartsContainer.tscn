@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5xjt874nqvkw"]
+[gd_scene load_steps=3 format=3 uid="uid://b5xjt874nqvkw"]
 
 [ext_resource type="Script" path="res://script/HeartsContainer.gd" id="1_klxbh"]
+[ext_resource type="PackedScene" uid="uid://kl12wrhucmoy" path="res://scenes/heartGui.tscn" id="2_2iye1"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_klxbh")
+
+[node name="Panel" parent="." instance=ExtResource("2_2iye1")]
+layout_mode = 2
+
+[node name="Panel2" parent="." instance=ExtResource("2_2iye1")]
+layout_mode = 2
+
+[node name="Panel3" parent="." instance=ExtResource("2_2iye1")]
+layout_mode = 2
+
+[node name="Panel4" parent="." instance=ExtResource("2_2iye1")]
+layout_mode = 2
+
+[node name="Panel5" parent="." instance=ExtResource("2_2iye1")]
+layout_mode = 2
