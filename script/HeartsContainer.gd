@@ -1,5 +1,5 @@
 extends HBoxContainer
-@onready var heartGuiclass = preload("res://UI/heartGui.tscn")
+@onready var heartGuiclass = preload("res://scenes/heartGui.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

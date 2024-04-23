@@ -82,13 +82,12 @@ script = ExtResource("1_hpr1c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xmx77")
 animation = &"static"
-frame_progress = 0.596728
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="enemy_hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 shape = SubResource("CircleShape2D_ecjaw")
 
 [node name="detectionArea" type="Area2D" parent="."]
@@ -98,5 +97,10 @@ position = Vector2(0, 2)
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_v5c7w")
 
+[node name="damage_cooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
