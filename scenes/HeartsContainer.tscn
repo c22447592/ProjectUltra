@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5xjt874nqvkw"]
 
 [ext_resource type="Script" path="res://script/HeartsContainer.gd" id="1_klxbh"]
-[ext_resource type="PackedScene" uid="uid://kl12wrhucmoy" path="res://scenes/heartGui.tscn" id="2_2iye1"]
+[ext_resource type="PackedScene" uid="uid://ckyhj4oultbdq" path="res://scenes/heartGui.tscn" id="2_2iye1"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 offset_right = 40.0

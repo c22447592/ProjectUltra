@@ -8,6 +8,8 @@ var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var attack_in_progress = false
 
+@export var inventory:Inventory
+
 var current_dir = "none"
 func _ready():
 	$AnimatedSprite2D.play("idle-front")
