@@ -1,10 +1,7 @@
 extends CharacterBody2D
 var speed = 100
-#var player_health = 250
+var player_health = 150
 var player_state
-
-@export var maxHealth=250
-@onready var player_health: int = maxHealth
 
 var player_alive = true
 var enemy_inattack_range = false
@@ -49,10 +46,6 @@ func player():
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
-		player_health -=50
-		if player_health < 0:
-			player_health=maxHealth
-		print_debug(player_health)
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
