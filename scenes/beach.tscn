@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://daqx0hyg33hid"]
+[gd_scene load_steps=42 format=3 uid="uid://daqx0hyg33hid"]
 
 [ext_resource type="Script" path="res://script/beach.gd" id="1_gajgq"]
 [ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_uue36"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://d4kklkktlwn51" path="res://tilesets/rockyLand-tileset/PNG/Objects.png" id="16_aeprw"]
 [ext_resource type="Texture2D" uid="uid://coqlwg7vropxx" path="res://tilesets/rockyLand-tileset/PNG/details.png" id="17_add3i"]
 [ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="18_2r4mf"]
+[ext_resource type="Script" path="res://script/CanvasLayer.gd" id="18_cr4v2"]
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3p83"]
@@ -25523,18 +25524,25 @@ position = Vector2(20, -25)
 motion_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("18_cr4v2")
 
 [node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("18_2r4mf")]
+scale = Vector2(1.4, 1.4)
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("19_tvkf6")]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.417
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.42
 anchor_bottom = 0.5
 offset_left = -139.5
-offset_right = 0.0
-offset_bottom = 0.0
+offset_top = -81.5
+offset_right = 139.5
+offset_bottom = 81.5
 grow_horizontal = 2
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="exitArea" to="." method="_on_exit_area_body_entered"]
+[connection signal="closed" from="CanvasLayer/Inventory" to="." method="_on_inventory_closed"]
+[connection signal="opened" from="CanvasLayer/Inventory" to="." method="_on_inventory_opened"]
