@@ -13,6 +13,7 @@ var attack_in_progress = false
 var current_dir = "none"
 func _ready():
 	$AnimatedSprite2D.play("idle-front")
+	self.global_position = Vector2(Global.playerx, Global.playery)
 
 func _physics_process(delta):
 	player_movement(delta)

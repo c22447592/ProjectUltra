@@ -61,11 +61,6 @@ toggle_inventory={
 ]
 }
 
-[layer_names]
-
-2d_physics/layer_1="Object collision"
-2d_physics/layer_2="Transition trigger"
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
