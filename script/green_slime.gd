@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var slime_health = 50
+var slime_health = 60
 var speed = 75
 
 var player_inattack_zone = false
@@ -10,6 +10,7 @@ var can_take_damage = true
 
 func _physics_process(delta):
 	deal_with_sword_damage()
+	#update_health()
 	
 	#chases the player and flips animation dependent on player position
 	if player_chase:
@@ -50,12 +51,13 @@ func deal_with_sword_damage():
 			can_take_damage = false
 			print("slime health = ", slime_health)
 			if slime_health <= 0:
+				print("Enemy defeated.")
 				$AnimatedSprite2D.play("static")
 				self.queue_free()
 			
 #func deal_with_spear_damage():
-	#if player_inattack_zone and GlobalPlayer.player_current_attack == true:
-		#slime_health = slime_health - GlobalPlayer.spear_damage
+	#if player_inattack_zone and Global.player_current_attack == true:
+		#slime_health = slime_health - Global.spear_damage
 		#print("slime health = ", slime_health)
 		#if slime_health <= 0:
 			#$AnimatedSprite2D.play("static")
@@ -63,3 +65,11 @@ func deal_with_sword_damage():
 		
 func _on_damage_cooldown_timeout():
 	can_take_damage = true
+	
+#func update_health():
+	#var healthbar = $healthbar
+	#
+	#if slime_health >= 60:
+		#healthbar.visible = false
+	#else:
+		#healthbar.visible = true

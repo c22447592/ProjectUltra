@@ -22,7 +22,7 @@ func _physics_process(delta):
 		player_health = 0
 		$AnimatedSprite2D.play("death")
 		print("You have been vanquished.")
-		
+		self.queue_free()
 		
 #Movement type 1 (Uses different idle animations, is geared for 4-directional approach)
 func player_movement(delta):
