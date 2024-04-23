@@ -19,4 +19,10 @@ func change_scene():
 		if Global.scene_destination == 'npc_village':
 			get_tree().change_scene_to_file("res://scenes/npc_village.tscn")
 			Global.finish_transition()
-	
+
+func _on_inventory_closed():
+	get_tree().paused=false
+
+
+func _on_inventory_opened():
+	get_tree().paused=true
