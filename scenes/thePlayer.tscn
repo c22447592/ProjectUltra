@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bsuorjkrankn" path="res://Player/Player-combat.png" id="1_ujshb"]
 [ext_resource type="Texture2D" uid="uid://33uvoo4imlby" path="res://Player/Player-movement.png" id="2_hufh0"]
 [ext_resource type="Script" path="res://script/player.gd" id="3_muai6"]
-[ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://UI/HeartsContainer.tscn" id="4_yskr0"]
+[ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="4_yskr0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0k2p"]
 radius = 33.0
