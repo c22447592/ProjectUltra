@@ -25486,7 +25486,7 @@ z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="testPlayer"]
 scale = Vector2(1.07055, 1.06979)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(1.5, 1.5)
 limit_left = -485
 limit_top = -262
 limit_right = 500

@@ -22117,7 +22117,7 @@ z_index = 1
 position = Vector2(-2, -47)
 
 [node name="Camera2D" type="Camera2D" parent="thePlayer"]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(1.5, 1.5)
 limit_left = -430
 limit_top = -427
 limit_right = 447
