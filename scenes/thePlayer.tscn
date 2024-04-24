@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://33uvoo4imlby" path="res://Player/Player-movement.png" id="2_hufh0"]
 [ext_resource type="Script" path="res://script/player.gd" id="3_muai6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_es4u4"]
-size = Vector2(15, 20)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_or38b"]
 atlas = ExtResource("1_ujshb")
 region = Rect2(0, 320, 64, 64)
@@ -598,11 +595,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fhbx"]
-size = Vector2(13, 7)
+size = Vector2(13, 10)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es4u4"]
+size = Vector2(15, 20)
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("3_muai6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_eg8gd")
+animation = &"death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(1.5, 13)
+shape = SubResource("RectangleShape2D_3fhbx")
 
 [node name="player_hitbox" type="Area2D" parent="."]
 z_index = 2

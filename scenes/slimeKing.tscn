@@ -178,7 +178,7 @@ height = 76.0
 radius = 43.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qv0wf"]
-radius = 74.0
+radius = 90.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2

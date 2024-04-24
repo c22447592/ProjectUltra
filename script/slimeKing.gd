@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var slimeKing_health = 300
+var slimeKing_health = 400
 var speed = 100
 
 var player_inattack_zone = false
@@ -53,6 +53,14 @@ func deal_with_sword_damage():
 				$AnimatedSprite2D.play("static")
 				print("Boss defeated. Regicide...")
 				self.queue_free()
+			elif slimeKing_health <= 200:
+				halfHealthAbilitiy()
+				
+func halfHealthAbilitiy():
+	var slime_scene = preload("res://scenes/green_slime.tscn")
+	var slime_instance = slime_scene.instantiate()
+	get_parent().add_child(slime_instance)
+	slime_instance.position = position
 			
 #func deal_with_spear_damage():
 	#if player_inattack_zone and GlobalPlayer.player_current_attack == true:
