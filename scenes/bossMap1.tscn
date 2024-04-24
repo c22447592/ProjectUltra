@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://wnpii5c0syul"]
+[gd_scene load_steps=22 format=3 uid="uid://wnpii5c0syul"]
 
 [ext_resource type="Script" path="res://script/bossMap1.gd" id="1_aucks"]
 [ext_resource type="Texture2D" uid="uid://clq2q68gkhb6w" path="res://tilesets/forest-tileset/PNG/Ground_grass.png" id="1_ijnah"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="10_0su5y"]
 [ext_resource type="PackedScene" uid="uid://bn0axsit5u086" path="res://scenes/slimeKing.tscn" id="12_546ex"]
 [ext_resource type="PackedScene" uid="uid://sromdg3jdhr7" path="res://scenes/green_slime.tscn" id="12_u12m8"]
+[ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="13_pcxlc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7uev"]
 texture = ExtResource("1_ijnah")
@@ -7150,3 +7151,13 @@ position = Vector2(20, -430)
 
 [node name="greenSlime" parent="." instance=ExtResource("12_u12m8")]
 position = Vector2(104, 347)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("13_pcxlc")]
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.01
+anchor_right = 0.018
+anchor_bottom = 0.015
+scale = Vector2(1.4, 1.4)

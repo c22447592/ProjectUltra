@@ -25525,6 +25525,11 @@ process_mode = 3
 script = ExtResource("18_cr4v2")
 
 [node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("18_2r4mf")]
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.01
+anchor_right = 0.018
+anchor_bottom = 0.015
 scale = Vector2(1.4, 1.4)
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("19_tvkf6")]

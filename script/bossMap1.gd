@@ -1,10 +1,13 @@
 extends Node2D
 
+@onready var heartContainer=$CanvasLayer/HBoxContainer
+@onready var player=$thePlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	var spawn_area = Rect2(Vector2(-267,89), Vector2(647,375))
 	spawn_slimes(10, spawn_area)
+	heartContainer.setMaxHearts(player.player_health/25)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
