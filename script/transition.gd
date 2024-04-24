@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_scene_path = ""
+@export var next_scene_path = "res://scenes/beach.tscn"
 @export var x = 0
 @export var y = 0
 

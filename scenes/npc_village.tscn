@@ -22125,7 +22125,7 @@ script = ExtResource("1_ta2s6")
 
 [node name="thePlayer" parent="." instance=ExtResource("2_y2vlp")]
 z_index = 0
-position = Vector2(-2, -237)
+position = Vector2(-1, -227)
 
 [node name="Camera2D" type="Camera2D" parent="thePlayer"]
 zoom = Vector2(1.5, 1.5)
@@ -22163,7 +22163,6 @@ polygon = PackedVector2Array(-427, -421, 437, -413, 437, -32, 46, -23, -25, -23,
 
 [node name="transition" parent="." instance=ExtResource("18_2rckj")]
 position = Vector2(6, -26)
-next_scene_path = "res://scenes/beach.tscn"
 y = -235
 
 [node name="transition2" parent="." instance=ExtResource("18_2rckj")]
