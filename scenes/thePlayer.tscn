@@ -1,8 +1,22 @@
-[gd_scene load_steps=78 format=3 uid="uid://dslejir40ph3w"]
+[gd_scene load_steps=92 format=3 uid="uid://dslejir40ph3w"]
 
 [ext_resource type="Texture2D" uid="uid://bsuorjkrankn" path="res://Player/Player-combat.png" id="1_ujshb"]
 [ext_resource type="Texture2D" uid="uid://33uvoo4imlby" path="res://Player/Player-movement.png" id="2_hufh0"]
 [ext_resource type="Script" path="res://script/player.gd" id="3_muai6"]
+[ext_resource type="AudioStream" uid="uid://btktjg2q337v5" path="res://audio/sfx/steps.mp3" id="4_3g11d"]
+[ext_resource type="AudioStream" uid="uid://bsuabqpfbu1x5" path="res://audio/sfx/sword.1.ogg" id="5_2ml14"]
+[ext_resource type="AudioStream" uid="uid://ysgt8nmqh0n7" path="res://audio/sfx/sword.2.ogg" id="6_sykql"]
+[ext_resource type="AudioStream" uid="uid://b0g8ijgwxrmb3" path="res://audio/sfx/sword.3.ogg" id="7_7ym3f"]
+[ext_resource type="AudioStream" uid="uid://dqh5j6i6avhvv" path="res://audio/sfx/sword.4.ogg" id="8_4b21m"]
+[ext_resource type="AudioStream" uid="uid://hu3xvrkgpilp" path="res://audio/sfx/sword.5.ogg" id="9_1sqac"]
+[ext_resource type="AudioStream" uid="uid://cu0qnk5jx6n6n" path="res://audio/sfx/sword.6.ogg" id="10_pasqa"]
+[ext_resource type="AudioStream" uid="uid://cd38shf2t2kbl" path="res://audio/sfx/sword.7.ogg" id="11_q03tl"]
+[ext_resource type="AudioStream" uid="uid://dbg8cadi38lmj" path="res://audio/sfx/sword.8.ogg" id="12_1671e"]
+[ext_resource type="AudioStream" uid="uid://dnbbe5skrjhwx" path="res://audio/sfx/sword.9.ogg" id="13_v5qvg"]
+[ext_resource type="AudioStream" uid="uid://du485hw5ek5hq" path="res://audio/sfx/sword.10.ogg" id="14_sf8el"]
+[ext_resource type="AudioStream" uid="uid://ded4d087qegai" path="res://audio/sfx/animal melee sound.wav" id="15_16iwx"]
+[ext_resource type="AudioStream" uid="uid://dil853hy3y5kr" path="res://audio/sfx/melee sound.wav" id="16_ulh4m"]
+[ext_resource type="AudioStream" uid="uid://c4wy1pbx3syxh" path="res://audio/sfx/sword sound.wav" id="17_mw8dm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_or38b"]
 atlas = ExtResource("1_ujshb")
@@ -612,12 +626,14 @@ sprite_frames = SubResource("SpriteFrames_eg8gd")
 animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 2
 y_sort_enabled = true
 position = Vector2(1.5, 13)
 shape = SubResource("RectangleShape2D_3fhbx")
 
 [node name="player_hitbox" type="Area2D" parent="."]
+visible = false
 z_index = 2
 collision_layer = 2
 
@@ -632,7 +648,77 @@ wait_time = 1.75
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.25
 
-[node name="footsteps" type="AudioStreamPlayer2D" parent="."]
+[node name="footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3g11d")
+autoplay = true
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="footstep"]
+wait_time = 5.0
+
+[node name="sword1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2ml14")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_sykql")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7ym3f")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_4b21m")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_1sqac")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pasqa")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_q03tl")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword8" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_1671e")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword9" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_v5qvg")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="sword10" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_sf8el")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="swing1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_16iwx")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="swing2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_ulh4m")
+volume_db = -30.0
+bus = &"SFX"
+
+[node name="swing3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_mw8dm")
+volume_db = -30.0
 bus = &"SFX"
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]

@@ -13,6 +13,8 @@ func _ready():
 	heartContainer.setMaxHearts(player.player_health)
 	heartContainer.updateHearts(player.player_health)
 	player.healthChanged.connect(heartContainer.updateHearts)
+	audio_file2.play()
+	audio_file1.stop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,9 +25,6 @@ func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
 		audio_file1.play()
 		audio_file2.stop()
-	else:
-		audio_file2.play()
-		audio_file1.stop()
 
 func spawn_slimes(number_of_slimes, area_rect):
 	var slime_scene = preload("res://scenes/green_slime.tscn")

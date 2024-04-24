@@ -6,8 +6,8 @@ var current_state = IDLE
 var dir = Vector2.RIGHT
 var start_pos
 
-var left_limit = -210
-var right_limit = -110
+var left_limit = -200
+var right_limit = -100
 
 var is_roaming = true
 var is_chatting = false
@@ -82,7 +82,7 @@ func _on_chat_detection_area_body_exited(body):
 
 
 func _on_timer_timeout():
-	$Timer.wait_time = choose([0.5,1,1.5])
+	$Timer.wait_time = choose([1,1.1,1.2])
 	current_state = choose([IDLE,IDLE,IDLE,IDLE,IDLE,LEFT,RIGHT])
 
 

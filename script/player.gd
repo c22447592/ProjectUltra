@@ -14,6 +14,28 @@ var input_disabled = false #stops the player from attacking or moving after deat
 
 @export var inventory:Inventory
 
+@onready var footsteps = $footstep
+
+@onready var sword1 = $sword1
+@onready var sword2 = $sword2
+@onready var sword3 = $sword3
+@onready var sword4 = $sword4
+@onready var sword5 = $sword5
+@onready var sword6 = $sword6
+@onready var sword7 = $sword7
+@onready var sword8 = $sword8
+@onready var sword9 = $sword9
+@onready var sword10 = $sword10
+
+@onready var swing1 = $swing1
+@onready var swing2 = $swing2
+@onready var swing3 = $swing3
+
+var sword
+var swing
+
+
+
 func _ready():
 	$AnimatedSprite2D.play("idle-front")
 	self.global_position = Vector2(Global.playerx, Global.playery)
@@ -24,7 +46,14 @@ func _physics_process(delta):
 		attack()
 		enemy_attack()
 		die()
-		
+
+func choose(array):
+	array.shuffle()
+	return array.front()
+
+func play_steps():
+	$footstep/Timer.wait_time = 5
+	footsteps.play()
 #Movement type 1 (Uses different idle animations, is geared for 4-directional approach)
 func player_movement(delta):
 	#function for player movement
@@ -56,6 +85,8 @@ func player_movement(delta):
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
+		footsteps.play()
+		play_steps()
 		
 func play_anim(movement):
 	var dir = current_dir
@@ -145,6 +176,10 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_in_progress = true
+		sword = choose([sword1,sword2,sword3,sword4,sword5,sword6,sword7,sword8,sword9,sword10])
+		swing = choose([swing1,swing2,swing3])
+		#sword.play()
+		swing.play()
 		if dir == "right":
 			$AnimatedSprite2D.play("attack-sword-right")
 			$deal_attack_timer.start()

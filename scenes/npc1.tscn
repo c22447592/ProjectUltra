@@ -126,10 +126,12 @@ animation = &"west_walk"
 frame_progress = 0.400883
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_2liyi")
 
 [node name="chat_detection_area" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
 shape = SubResource("CircleShape2D_3ka2k")

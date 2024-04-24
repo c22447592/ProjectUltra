@@ -22027,6 +22027,7 @@ texture = ExtResource("14_t7jrf")
 12:16/0/physics_layer_0/angular_velocity = 0.0
 12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.3241, -11.3137, -7.07107, -21.9203, 2.12132, -19.4454, 18.7383, -16.9706, 20.8597, -9.19239, 21.2132, -3.88909, 22.2739, 4.94975, 20.8597, 7.42462, 13.435, 9.54594, -1.41421, 17.3241, -16.2635, 13.0815)
 12:19/0 = 0
+12:19/0/y_sort_origin = -2
 12:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:19/0/physics_layer_0/angular_velocity = 0.0
 12:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.59619, -2.47487, 8, -2.47487, 6.18719, 2.12132, 1.23744, 5.3033, -4.41942, 3.53553)
@@ -22100,8 +22101,10 @@ texture = ExtResource("14_t7jrf")
 10:31/0/physics_layer_0/angular_velocity = 0.0
 12:31/size_in_atlas = Vector2i(2, 2)
 12:31/0 = 0
+12:31/0/y_sort_origin = -2
 12:31/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:31/0/physics_layer_0/angular_velocity = 0.0
+12:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.9602, -4.5962, 12.7279, -3.53553, 12.0208, 2.47487, 5.3033, 8, -7.42462, 12.7279, -14.4957, 3.53553)
 
 [sub_resource type="TileSet" id="TileSet_ta2g0"]
 physics_layer_0/collision_layer = 1
@@ -22127,7 +22130,7 @@ script = ExtResource("1_ta2s6")
 
 [node name="thePlayer" parent="." instance=ExtResource("2_y2vlp")]
 z_index = 0
-position = Vector2(-1, -227)
+position = Vector2(-7, -247)
 
 [node name="Camera2D" type="Camera2D" parent="thePlayer"]
 zoom = Vector2(1.5, 1.5)
@@ -22159,16 +22162,19 @@ layer_4/z_index = 2
 layer_4/tile_data = PackedInt32Array(-1310731, 589838, 8, -1376266, 917518, 7, -1638417, 524302, 9, -1376275, 524302, 8, -1441810, 917518, 6, -786430, 327694, 4, -1507331, 327694, 4, -1310746, 327694, 4, -1376230, 327694, 4, -655383, 1179663, 4, -655378, 1179663, 4, -786458, 524303, 1, -1376278, 917519, 6, -1441814, 917519, 6, -1507350, 917519, 6, -1376280, 196622, 4, -1638424, 851983, 6, -1507352, 851983, 6, -1572886, 917519, 6, -1638422, 917519, 6, -1441816, 851983, 6, -1572888, 851983, 6, -327697, 1441807, 9, -327695, 1441807, 9, -786450, 851983, 9, -196631, 196622, 6, -262167, 196622, 5, -327703, 196622, 4, -327702, 262158, 4, -262166, 65550, 4, -1245208, 196622, 6, -1310744, 196622, 5, -1376279, 262158, 4, -1310743, 14, 4, -1310740, 14, 2, -1376248, 589838, 8, -1376246, 589838, 8, -1507316, 589838, 8, -1441783, 917518, 8, -1376250, 327694, 4, -720903, 655375, 31, -589831, 1048591, 31, -524295, 1441807, 35, -524303, 1441807, 37, -655370, 1441807, 39, -524307, 1835023, 33, -327691, 1048591, 31, -458774, 1835023, 37, -589836, 786447, 25, -524299, 786447, 26, -1507337, 524302, 9, -1638394, 655374, 9, -1310729, 589838, 8, -1310711, 655374, 5, -1310738, 655374, 5, -1245194, 655374, 7, -1638411, 1769487, 3, -1638408, 1769487, 3, -1638407, 1769487, 3, -1572871, 1769487, 3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-4, -1)
 polygon = PackedVector2Array(-427, -421, 437, -413, 437, -298, 429, -294, 420, -295, 410, -287, 410, -257, 415, -253, 436, -254, 437, -32, 46, -23, -25, -23, -416, -26, -416, -249.75, -394, -256, -381, -261, -382, -287, -389, -295, -418, -295, -416, -414, -485, -434, -488, -23, -404, 73, 507, 64, 514, -490, -483, -494, -485, -440)
 
 [node name="transition" parent="." instance=ExtResource("18_2rckj")]
+visible = false
 position = Vector2(6, -26)
 y = -235
 
 [node name="transition2" parent="." instance=ExtResource("18_2rckj")]
+visible = false
 position = Vector2(2, -419)
 next_scene_path = "res://scenes/bossMap1.tscn"
 x = 30
