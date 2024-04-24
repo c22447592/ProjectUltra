@@ -1,0 +1,143 @@
+[gd_scene load_steps=19 format=3 uid="uid://c66qlmo08130p"]
+
+[ext_resource type="Script" path="res://script/npc1.gd" id="1_i2ner"]
+[ext_resource type="Texture2D" uid="uid://dw631wfv11q18" path="res://art/MiniWorldSprites/Characters/Champions/Börg.png" id="1_tfcj8"]
+[ext_resource type="PackedScene" uid="uid://enjmsupjrs77" path="res://scenes/Dialoge.tscn" id="3_ajafa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a577c"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f68e1"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxmrd"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw367"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24dnu"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12eu3"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4hi5"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib6p3"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwota"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpi1j"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qifc6"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u56m2"]
+atlas = ExtResource("1_tfcj8")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wjrl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a577c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f68e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxmrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw367")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24dnu")
+}],
+"loop": true,
+"name": &"east_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12eu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4hi5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib6p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwota")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpi1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qifc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u56m2")
+}],
+"loop": true,
+"name": &"west_walk",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2liyi"]
+size = Vector2(10, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ka2k"]
+radius = 21.095
+
+[node name="npc1" type="CharacterBody2D"]
+position = Vector2(68, 54)
+disable_mode = 1
+script = ExtResource("1_i2ner")
+
+[node name="Dialoge" parent="." instance=ExtResource("3_ajafa")]
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8wjrl")
+animation = &"west_walk"
+frame_progress = 0.400883
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2liyi")
+
+[node name="chat_detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area"]
+shape = SubResource("CircleShape2D_3ka2k")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="dialogue_finish" from="Dialoge" to="." method="_on_dialoge_dialogue_finish"]
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
