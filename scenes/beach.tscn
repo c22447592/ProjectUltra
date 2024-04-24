@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://daqx0hyg33hid"]
+[gd_scene load_steps=44 format=3 uid="uid://daqx0hyg33hid"]
 
 [ext_resource type="Script" path="res://script/beach.gd" id="1_gajgq"]
 [ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_uue36"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://script/CanvasLayer.gd" id="18_cr4v2"]
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="21_sgejj"]
+[ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="22_skig0"]
+[ext_resource type="AudioStream" uid="uid://y0vcarmhiiyl" path="res://audio/sfx/water.mp3" id="23_54bqh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3p83"]
 tile_data = PackedInt32Array(0, 65550, 25)
@@ -25546,6 +25548,17 @@ z_index = 2
 position = Vector2(9, -261)
 next_scene_path = "res://scenes/npc_village.tscn"
 y = -60
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_skig0")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_54bqh")
+volume_db = -20.0
+autoplay = true
+bus = &"SFX"
 
 [connection signal="closed" from="CanvasLayer/Inventory" to="." method="_on_inventory_closed"]
 [connection signal="opened" from="CanvasLayer/Inventory" to="." method="_on_inventory_opened"]
