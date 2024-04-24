@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 var slime_health = 80
-var speed = 40
+var speed = 60
 
 var player_inattack_zone = false
 var player_detected = false
 var player = null
 var can_take_damage = true
+var vel = Vector2()
 
 func _physics_process(delta):
 	deal_with_sword_damage()
@@ -15,7 +16,9 @@ func _physics_process(delta):
 	#chases the player and flips animation dependent on player position
 	if player_detected == true:
 		#increasing speed variable slows down the enemy
-		position += (player.position - position) / speed
+		var direction = (player.position - position).normalized()
+		vel = vel.lerp(direction * speed, 10 * delta)
+		position += vel * delta
 		$AnimatedSprite2D.play("move")
 		
 		if(player.position.x - position.x) < 0:
@@ -23,6 +26,7 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 	else:
+		vel = Vector2.ZERO  # Reset velocity when player not detected
 		$AnimatedSprite2D.play("static")
 
 
