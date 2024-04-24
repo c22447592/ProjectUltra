@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var speed = 100
-var player_health = 100
+var player_health = 250
 var player_state
 var current_dir = "none"
 var player_alive = true
