@@ -3,6 +3,7 @@ var speed = 100
 var player_health = 10
 var player_state
 signal healthChanged
+var current_dir = "none"
 
 var player_alive = true
 var enemy_inattack_range = false
@@ -13,7 +14,6 @@ var sprint_state = false #while holding left shoft player gets speed turned to 1
 
 @export var inventory:Inventory
 
-var current_dir = "none"
 func _ready():
 	$AnimatedSprite2D.play("idle-front")
 	self.global_position = Vector2(Global.playerx, Global.playery)
@@ -139,7 +139,7 @@ func enemy_attack():
 		player_health = player_health - 1
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
-		print(player_health)
+		print("Player health is ", player_health)
 		healthChanged.emit(player_health)
 		
 func _on_attack_cooldown_timeout():
