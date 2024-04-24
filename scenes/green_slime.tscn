@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://sromdg3jdhr7"]
+[gd_scene load_steps=14 format=3 uid="uid://sromdg3jdhr7"]
 
 [ext_resource type="Script" path="res://script/green_slime.gd" id="1_hpr1c"]
 [ext_resource type="Texture2D" uid="uid://b00w02u1da1rt" path="res://mobs/green_slime.png" id="1_y47mi"]
@@ -70,11 +70,15 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d6du4"]
+radius = 2.0
+height = 12.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecjaw"]
 radius = 8.06226
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5c7w"]
-radius = 32.0156
+radius = 48.0416
 
 [node name="greenSlime" type="CharacterBody2D"]
 script = ExtResource("1_hpr1c")
@@ -83,17 +87,20 @@ script = ExtResource("1_hpr1c")
 sprite_frames = SubResource("SpriteFrames_xmx77")
 animation = &"static"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d6du4")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+[node name="hitBox" type="CollisionShape2D" parent="enemy_hitbox"]
 shape = SubResource("CircleShape2D_ecjaw")
 
 [node name="detectionArea" type="Area2D" parent="."]
 position = Vector2(0, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+[node name="detectionBox" type="CollisionShape2D" parent="detectionArea"]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_v5c7w")
 
