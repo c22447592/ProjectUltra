@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var slime_health = 90
-var speed = 100
+var slime_health = 80
+var speed = 40
 
 var player_inattack_zone = false
 var player_detected = false
@@ -60,6 +60,7 @@ func deal_with_sword_damage():
 			if slime_health <= 0:
 				print("Enemy defeated.")
 				$AnimatedSprite2D.play("static")
+				drop_loot()
 				self.queue_free()
 			
 #func deal_with_spear_damage():
@@ -73,6 +74,23 @@ func deal_with_sword_damage():
 		
 func _on_damage_cooldown_timeout():
 	can_take_damage = true
+	
+func drop_loot():
+	#slime ball drop
+	var slimeball = preload("res://scenes/slimeball_collectable.tscn")
+	var slimeball_instance = slimeball.instantiate()
+	slimeball_instance.global_position = $lootDrop.global_position
+	get_parent().add_child(slimeball_instance)
+	
+	#gold coin drop
+	randomize()
+	var decideCoin = randi_range(1,2)
+	if decideCoin == 2:
+		var coin = preload("res://scenes/gold_coin_collectable.tscn")
+		var coin_instance = coin.instantiate()
+		coin_instance.global_position = $lootDrop.global_position
+		get_parent().add_child(coin_instance)
+
 	
 	
 #func update_health():

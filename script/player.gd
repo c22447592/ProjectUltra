@@ -4,13 +4,13 @@ var player_health = 10
 var player_state
 signal healthChanged
 var current_dir = "none"
-
 var player_alive = true
-var enemy_inattack_range = false
 var enemy_attack_cooldown = true
+var enemy_inattack_range = false
 var attack_in_progress = false
 var sprint_state = false #while holding left shoft player gets speed turned to 150 
 #(future: sprint runs out after stamina is out)
+var input_disabled = false #stops the player from attacking or moving after death
 
 @export var inventory:Inventory
 
@@ -19,16 +19,11 @@ func _ready():
 	self.global_position = Vector2(Global.playerx, Global.playery)
 
 func _physics_process(delta):
-	player_movement(delta)
-	attack()
-	enemy_attack()
-	
-	if player_health <= 0:
-		player_alive = false
-		player_health = 0
-		$AnimatedSprite2D.play("death")
-		print("You have been vanquished.")
-		self.queue_free()
+	if !input_disabled:
+		player_movement(delta)
+		attack()
+		enemy_attack()
+		die()
 		
 #Movement type 1 (Uses different idle animations, is geared for 4-directional approach)
 func player_movement(delta):
@@ -95,7 +90,7 @@ func play_anim(movement):
 		elif movement == 0:
 			if attack_in_progress == false:
 				anim.play("idle-front")
-		
+	
 	move_and_slide()
 		
 	#Movement type 2 (better for 8-directional movement)
@@ -163,7 +158,18 @@ func attack():
 			$AnimatedSprite2D.play("attack-sword-down")
 			$deal_attack_timer.start()
 
+
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	Global.player_current_attack = false 
 	attack_in_progress = false
+
+
+func die():
+	if player_health <= 0:
+		player_alive = false
+		$AnimatedSprite2D.play("death")
+		$CollisionShape2D.disabled = true
+		print("You have been vanquished.")
+		input_disabled = true
+		
