@@ -1,16 +1,14 @@
 extends Node2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	var spawn_area = Rect2(Vector2(-267,89), Vector2(647,375))
+	var spawn_area = Rect2(Vector2(-247,395), Vector2(342,108))
 	spawn_slimes(10, spawn_area)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func spawn_slimes(number_of_slimes, area_rect):
 	var slime_scene = preload("res://scenes/green_slime.tscn")
 	for i in range(number_of_slimes):

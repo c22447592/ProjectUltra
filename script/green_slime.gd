@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var slime_health = 60
-var speed = 80
+var slime_health = 90
+var speed = 100
 
 var player_inattack_zone = false
 var player_detected = false
@@ -21,7 +21,7 @@ func _physics_process(delta):
 		if(player.position.x - position.x) < 0:
 			$AnimatedSprite2D.flip_h = true
 		else:
-			$AnimatedSprite2D.flip_h = false	
+			$AnimatedSprite2D.flip_h = false
 	else:
 		$AnimatedSprite2D.play("static")
 

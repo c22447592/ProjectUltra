@@ -7,6 +7,8 @@ var player_alive = true
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 var attack_in_progress = false
+var sprint_state = false #while holding left shoft player gets speed turned to 150 
+#(future: sprint runs out after stamina is out)
 
 @export var inventory:Inventory
 
@@ -30,6 +32,10 @@ func _physics_process(delta):
 #Movement type 1 (Uses different idle animations, is geared for 4-directional approach)
 func player_movement(delta):
 	#function for player movement
+	if Input.is_action_pressed("l-shift"): #sprint on
+		speed = 150
+	if Input.is_action_just_released("l-shift"): #sprint off
+		speed = 100
 	if Input.is_action_pressed("right"):
 		current_dir = "right"
 		play_anim(1)

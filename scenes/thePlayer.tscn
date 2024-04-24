@@ -598,9 +598,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fhbx"]
-size = Vector2(13, 7)
+size = Vector2(15, 8)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("3_muai6")
 
@@ -629,7 +629,7 @@ animation = &"death"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(1.5, 14.5)
+position = Vector2(1.5, 14)
 shape = SubResource("RectangleShape2D_3fhbx")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
