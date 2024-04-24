@@ -7,7 +7,9 @@ func _ready():
 	randomize()
 	var spawn_area = Rect2(Vector2(-267,89), Vector2(647,375))
 	spawn_slimes(10, spawn_area)
-	heartContainer.setMaxHearts(player.player_health/25)
+	heartContainer.setMaxHearts(player.player_health)
+	heartContainer.updateHearts(player.player_health)
+	player.healthChanged.connect(heartContainer.updateHearts)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
