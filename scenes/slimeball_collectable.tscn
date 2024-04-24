@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d07ytecjs0o74"]
+[gd_scene load_steps=11 format=3 uid="uid://d07ytecjs0o74"]
 
 [ext_resource type="Script" path="res://script/slimeball_collectable.gd" id="1_mpray"]
+[ext_resource type="Resource" uid="uid://bby5jhohr1tuj" path="res://UI/Slimeball.tres" id="2_o3k04"]
 [ext_resource type="Texture2D" uid="uid://btv108k7rgbc5" path="res://art/Items/mobLoot/slimeBall.png" id="2_r14y8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbxsw"]
@@ -184,6 +185,7 @@ _data = {
 
 [node name="slimeball_collectable" type="StaticBody2D"]
 script = ExtResource("1_mpray")
+itemRes = ExtResource("2_o3k04")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, 13)

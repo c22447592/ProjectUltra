@@ -19,8 +19,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -46.0
-offset_bottom = -48.0
+offset_top = 12.0
+offset_right = -112.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_chxc5")
@@ -29,20 +30,20 @@ texture = ExtResource("1_chxc5")
 layout_mode = 1
 anchor_right = 0.65
 anchor_bottom = 1.0
-offset_top = -1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 65.5
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/Inventory"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 17.0
-offset_right = -1.44998
-offset_bottom = -14.0
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 0.99
+offset_right = -5.14646
+offset_bottom = -0.140006
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -135,35 +136,10 @@ layout_mode = 2
 [node name="Panel27" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
 layout_mode = 2
 
-[node name="Panel28" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel29" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel30" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel31" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel32" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel33" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel34" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel35" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
-[node name="Panel36" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer" instance=ExtResource("1_w87np")]
-layout_mode = 2
-
 [node name="GridContainer2" type="GridContainer" parent="NinePatchRect/Inventory/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 9
@@ -194,58 +170,3 @@ layout_mode = 2
 
 [node name="Panel9" parent="NinePatchRect/Inventory/VBoxContainer/GridContainer2" instance=ExtResource("1_w87np")]
 layout_mode = 2
-
-[node name="Description" type="Control" parent="NinePatchRect"]
-layout_mode = 1
-anchor_left = 0.65
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.55001
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="40" type="VBoxContainer" parent="NinePatchRect/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.23
-anchor_right = 0.93
-anchor_bottom = 0.556
-offset_left = 2.0
-offset_top = -10.45
-offset_right = 0.99299
-offset_bottom = -2.94
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="NinePatchRect/Description/40"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/Description/40/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Item desc"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="NinePatchRect/Description"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.605
-anchor_right = 0.93
-anchor_bottom = 0.901
-offset_left = 2.0
-offset_top = -3.575
-offset_right = 2.0
-offset_bottom = -3.575
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="NinePatchRect/Description/VBoxContainer2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="NinePatchRect/Description/VBoxContainer2/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Stats"
