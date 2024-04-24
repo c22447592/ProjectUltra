@@ -1,8 +1,10 @@
 extends Node
 
+@onready var heartsContainer=$CanvasLayer/HBoxContainer
+@onready var player=$testPlayer
 func _ready():
-	pass
-	
+	heartsContainer.setMaxHearts(player.player_health/25)
+
 func _process(delta):
 	pass
 
