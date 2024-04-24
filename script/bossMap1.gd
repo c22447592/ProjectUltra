@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var heartContainer=$CanvasLayer/HBoxContainer
 @onready var player=$thePlayer
-@onready var audio_file1 = $AudioStreamPlayer2D
-@onready var audio_file2 = $AudioStreamPlayer2D2
+@onready var audio_file1 = $bossMusic
+@onready var audio_file2 = $ambientForest
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
