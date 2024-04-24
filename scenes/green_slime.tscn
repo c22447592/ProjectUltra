@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b00w02u1da1rt" path="res://mobs/green_slime.png" id="1_y47mi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8xa"]
-radius = 7.0
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4uod"]
 atlas = ExtResource("1_y47mi")
@@ -77,7 +77,7 @@ animations = [{
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5c7w"]
-radius = 38.0
+radius = 33.0
 
 [node name="greenSlime" type="CharacterBody2D"]
 z_index = 2
@@ -106,6 +106,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
+light_mask = 3
+visibility_layer = 3
 shape = SubResource("CircleShape2D_v5c7w")
 
 [node name="damage_cooldown" type="Timer" parent="."]

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-var slimeKing_health = 500
-var speed = 50
+var slimeKing_health = 300
+var speed = 100
 
 var player_inattack_zone = false
-var player_chase = false
+var player_detected = false
 var player = null
 var can_take_damage = true
 
@@ -12,7 +12,7 @@ func _physics_process(delta):
 	deal_with_sword_damage()
 	
 	#chases the player and flips animation dependent on player position
-	if player_chase:
+	if player_detected:
 		position += (player.position - position)/speed
 		$AnimatedSprite2D.play("move")
 	else:
@@ -20,24 +20,27 @@ func _physics_process(delta):
 
 func _on_detection_area_body_entered(body):
 	player = body
-	player_chase = true
+	player_detected = true
 
 
 func _on_detection_area_body_exited(body):
 	player = null
-	player_chase = false
+	player_detected = false
 
 	
 func enemy():
 	pass
 
+
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player"):
 		player_inattack_zone = true
 
+
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
+
 		
 func deal_with_sword_damage():
 	if player_inattack_zone and Global.player_current_attack == true:
@@ -45,9 +48,10 @@ func deal_with_sword_damage():
 			slimeKing_health = slimeKing_health - Global.sword_damage
 			$damage_cooldown.start()
 			can_take_damage = false
-			print("slime health = ", slimeKing_health)
+			print("Slime King health = ", slimeKing_health)
 			if slimeKing_health <= 0:
 				$AnimatedSprite2D.play("static")
+				print("Boss defeated. Regicide...")
 				self.queue_free()
 			
 #func deal_with_spear_damage():
@@ -60,4 +64,3 @@ func deal_with_sword_damage():
 		
 func _on_damage_cooldown_timeout():
 	can_take_damage = true
-

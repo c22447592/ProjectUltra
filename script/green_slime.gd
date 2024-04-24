@@ -4,19 +4,19 @@ var slime_health = 60
 var speed = 75
 
 var player_inattack_zone = false
-var player_chase = false
+var player_detected = false
 var player = null
 var can_take_damage = true
+
 
 func _physics_process(delta):
 	deal_with_sword_damage()
 	#update_health()
 	
 	#chases the player and flips animation dependent on player position
-	if player_chase:
+	if player_detected:
 		position += (player.position - position)/speed
 		$AnimatedSprite2D.play("move")
-		
 		if(player.position.x - position.x) < 0:
 			$AnimatedSprite2D.flip_h = true
 		else:
@@ -25,12 +25,12 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("static")
 
 func _on_detection_area_body_entered(body):
-	player = body
-	player_chase = true
+		player = body
+		player_detected = true
 
 func _on_detection_area_body_exited(body):
-	player = null
-	player_chase = false
+		player = null
+		player_detected = false
 	
 func enemy():
 	pass
