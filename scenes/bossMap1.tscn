@@ -12,9 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="10_0su5y"]
 [ext_resource type="PackedScene" uid="uid://bn0axsit5u086" path="res://scenes/slimeKing.tscn" id="12_546ex"]
 [ext_resource type="AudioStream" uid="uid://cirdob3iu7288" path="res://audio/music/boss.ogg" id="13_jpp20"]
-[ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="14_7yom1"]
-[ext_resource type="PackedScene" uid="uid://sromdg3jdhr7" path="res://scenes/green_slime.tscn" id="12_u12m8"]
 [ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="13_pcxlc"]
+[ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="14_7yom1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7uev"]
 texture = ExtResource("1_ijnah")
@@ -7151,16 +7150,16 @@ position = Vector2(35, 500)
 next_scene_path = "res://scenes/npc_village.tscn"
 y = -405
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("12_546ex")]
-
+[node name="slimeKing" parent="." instance=ExtResource("12_546ex")]
 position = Vector2(-51, -410)
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+[node name="ambientForest" type="AudioStreamPlayer2D" parent="."]
+rotation = -0.301507
 stream = ExtResource("14_7yom1")
 autoplay = true
 bus = &"Music"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="bossMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_jpp20")
 autoplay = true
 bus = &"Music"
@@ -7171,13 +7170,6 @@ bus = &"Music"
 position = Vector2(34, -355)
 shape = SubResource("RectangleShape2D_r0ckh")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-
-position = Vector2(20, -430)
-
-[node name="greenSlime" parent="." instance=ExtResource("12_u12m8")]
-position = Vector2(104, 347)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("13_pcxlc")]
@@ -7187,3 +7179,5 @@ anchor_top = 0.01
 anchor_right = 0.018
 anchor_bottom = 0.015
 scale = Vector2(1.4, 1.4)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
