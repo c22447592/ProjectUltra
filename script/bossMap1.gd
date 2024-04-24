@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var entrance_marker: Node2D = $EmtranceMarkers
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
