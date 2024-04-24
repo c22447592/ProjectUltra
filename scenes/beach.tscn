@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://bbqhqd5lpbwek" path="res://tilesets/forest-tileset/PNG/Water_lilis.png" id="15_a300y"]
 [ext_resource type="Texture2D" uid="uid://d4kklkktlwn51" path="res://tilesets/rockyLand-tileset/PNG/Objects.png" id="16_aeprw"]
 [ext_resource type="Texture2D" uid="uid://coqlwg7vropxx" path="res://tilesets/rockyLand-tileset/PNG/details.png" id="17_add3i"]
-[ext_resource type="PackedScene" uid="uid://prxtwvfny5ur" path="res://scenes/HeartsContainer.tscn" id="18_2r4mf"]
+[ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="18_2r4mf"]
 [ext_resource type="Script" path="res://script/CanvasLayer.gd" id="18_cr4v2"]
-[ext_resource type="PackedScene" uid="uid://6e47j8xedseu" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
+[ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="21_sgejj"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3p83"]
@@ -25483,7 +25483,7 @@ script = ExtResource("1_gajgq")
 metadata/_edit_horizontal_guides_ = [-22.0, -127.0]
 
 [node name="testPlayer" parent="." instance=ExtResource("2_uue36")]
-z_index = 2
+z_index = 0
 
 [node name="Camera2D" type="Camera2D" parent="testPlayer"]
 visible = false

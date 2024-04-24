@@ -602,10 +602,30 @@ size = Vector2(15, 21)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
+<<<<<<< Updated upstream
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("3_muai6")
 
+=======
+script = ExtResource("3_muai6")
+
+[node name="player_hitbox" type="Area2D" parent="."]
+z_index = 2
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
+z_index = 2
+position = Vector2(1.5, 5)
+shape = SubResource("RectangleShape2D_es4u4")
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 1.75
+
+[node name="deal_attack_timer" type="Timer" parent="."]
+wait_time = 0.25
+
+>>>>>>> Stashed changes
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_eg8gd")
