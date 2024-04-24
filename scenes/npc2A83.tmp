@@ -22138,7 +22138,6 @@ limit_bottom = -20
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ta2g0")
-collision_visibility_mode = 1
 format = 2
 layer_0/name = "0"
 layer_0/z_index = -2
@@ -22175,6 +22174,5 @@ y = 460
 
 [node name="npc1" parent="." instance=ExtResource("19_eveod")]
 z_index = 2
-y_sort_enabled = true
-position = Vector2(-176, -217)
+position = Vector2(-226, -218)
 scale = Vector2(1.5, 1.5)
