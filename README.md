@@ -1,6 +1,9 @@
-Continuation on the HopeIslandDevelopment project. Needed new Repo as merge conflicts plagued original project which had over 50+ commits.
+Continuation on the HopeIslandDevelopment project. 
+Needed new Repo as merge conflicts plagued original project which had over 50+ commits.
+-----------------------------------------------------------
 Project Roles
-Amir - Mob Design & Title Screen
-Michael - Map
-Adam - Player Design, Function & Combat System
-John - UI & Inventory
+Amir - Mob & Boss Design, GitHub Expert, General Artwork
+Michael - Map Design, Y-Sorting & NPCs
+Adam - Player Design, Function, Scripting & Combat System
+John - UI, Inventory & Title Screen
+-----------------------------------------------------------
