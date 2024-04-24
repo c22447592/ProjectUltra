@@ -650,6 +650,7 @@ wait_time = 0.25
 
 [node name="footstep" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3g11d")
+volume_db = -20.0
 autoplay = true
 bus = &"SFX"
 
@@ -658,62 +659,62 @@ wait_time = 5.0
 
 [node name="sword1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_2ml14")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_sykql")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_7ym3f")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword4" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_4b21m")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword5" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_1sqac")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword6" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_pasqa")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword7" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_q03tl")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword8" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_1671e")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword9" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_v5qvg")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="sword10" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_sf8el")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="swing1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_16iwx")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="swing2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_ulh4m")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"SFX"
 
 [node name="swing3" type="AudioStreamPlayer2D" parent="."]

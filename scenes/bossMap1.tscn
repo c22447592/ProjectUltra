@@ -7195,11 +7195,13 @@ position = Vector2(-51, -410)
 [node name="ambientForest" type="AudioStreamPlayer2D" parent="."]
 rotation = -0.301507
 stream = ExtResource("14_7yom1")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 
 [node name="bossMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_jpp20")
+volume_db = -15.0
 autoplay = true
 bus = &"Music"
 
