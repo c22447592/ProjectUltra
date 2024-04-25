@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://hcdl5tnr716o"]
+
+[ext_resource type="Script" path="res://script/game_menu.gd" id="1_cv5hq"]
+[ext_resource type="Texture2D" uid="uid://fmim0jqaalon" path="res://UI/menuHolder.png" id="2_dj2ri"]
+[ext_resource type="Texture2D" uid="uid://cdg0sdx5st4ku" path="res://UI/buttonRegular.png" id="3_0280v"]
+[ext_resource type="Texture2D" uid="uid://cxg0m5uifvid8" path="res://UI/buttonPressed.png" id="4_p2iqr"]
+[ext_resource type="FontFile" uid="uid://l1auh0ybna6x" path="res://mainMenu/upheavtt.ttf" id="5_m1kl6"]
+[ext_resource type="PackedScene" uid="uid://gxavw04jr055" path="res://scenes/options_menu.tscn" id="6_nqqwc"]
+
+[node name="game_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cv5hq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = 162.0
+offset_right = 288.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 64
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_dj2ri")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 170
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="save_button" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_0280v")
+texture_pressed = ExtResource("4_p2iqr")
+
+[node name="new_game" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/save_button"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 9.0
+offset_right = 201.0
+offset_bottom = 38.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45098)
+theme_override_fonts/font = ExtResource("5_m1kl6")
+theme_override_font_sizes/font_size = 32
+text = "SAVE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="menu_button" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_0280v")
+texture_pressed = ExtResource("4_p2iqr")
+
+[node name="main_menu" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/menu_button"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 200.0
+offset_bottom = 38.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45098)
+theme_override_fonts/font = ExtResource("5_m1kl6")
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings_button" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_0280v")
+texture_pressed = ExtResource("4_p2iqr")
+
+[node name="settings" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/settings_button"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 200.0
+offset_bottom = 38.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45098)
+theme_override_fonts/font = ExtResource("5_m1kl6")
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit_button" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_0280v")
+texture_pressed = ExtResource("4_p2iqr")
+
+[node name="exit" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/exit_button"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 9.0
+offset_right = 200.0
+offset_bottom = 38.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.45098)
+theme_override_fonts/font = ExtResource("5_m1kl6")
+theme_override_font_sizes/font_size = 32
+text = "EXIT
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="options_menu" parent="." instance=ExtResource("6_nqqwc")]
+visible = false
+layout_mode = 1
