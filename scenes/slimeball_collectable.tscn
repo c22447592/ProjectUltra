@@ -1,35 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d07ytecjs0o74"]
 
+[ext_resource type="Script" path="res://script/slimeball_collectable.gd" id="1_2wopb"]
 [ext_resource type="Texture2D" uid="uid://btv108k7rgbc5" path="res://art/Items/mobLoot/slimeBall.png" id="2_r14y8"]
-
-[sub_resource type="GDScript" id="GDScript_k3hc3"]
-script/source = "extends Area2D
-
-@export var itemRes: InventoryItem
-
-func _ready():
-	onDeath()
-
-func onDeath():
-	randomize()
-	var randomSelect = randi_range(1,2)
-	if randomSelect == 1:
-		$AnimationPlayer.play(\"lootDropped-right\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-right\")
-		await get_tree().create_timer(10).timeout
-		$AnimationPlayer.play(\"fade-right\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-right\")
-		print(\"+1 slimeball\")
-		queue_free()
-	else:
-		$AnimationPlayer.play(\"lootDropped-left\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-left\")
-		await get_tree().create_timer(10).timeout
-		$AnimationPlayer.play(\"fade-left\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-left\")
-		print(\"+1 slimeball\")
-		queue_free()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbxsw"]
 atlas = ExtResource("2_r14y8")
@@ -327,7 +299,7 @@ _data = {
 }
 
 [node name="slimeball_collectable" type="Area2D"]
-script = SubResource("GDScript_k3hc3")
+script = ExtResource("1_2wopb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -340,6 +312,7 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8, 13)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(8, -13)
