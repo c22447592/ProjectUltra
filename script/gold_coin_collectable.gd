@@ -7,7 +7,6 @@ func _ready():
 	pass
 func _on_area_2d_body_entered(body):
 	if body.has_method("player"):
-		print("test")
 		player = body
 	randomize()
 	var randomSelect = randi_range(1,2)
