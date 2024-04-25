@@ -1,20 +1,18 @@
 extends CharacterBody2D
 var speed = 100
 var player_state
-signal healthChanged
 var current_dir = "none"
 var player_alive = true
 var enemy_attack_cooldown = true
 var enemy_inattack_range = false
 var attack_in_progress = false
 var sprint_state = false #while holding left shoft player gets speed turned to 150 
-#(future: sprint runs out after stamina is out)
 var input_disabled = false #stops the player from attacking or moving after death
+signal healthChanged
+
 
 @export var inventory:Inventory
-
 @onready var footsteps = $footstep
-
 @onready var swing1 = $swing1
 @onready var swing2 = $swing2
 @onready var swing3 = $swing3
@@ -29,8 +27,6 @@ var input_disabled = false #stops the player from attacking or moving after deat
 
 var swing
 var death
-
-
 
 func _ready():
 	$AnimatedSprite2D.play("idle-front")
