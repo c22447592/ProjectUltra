@@ -3,8 +3,14 @@ extends Area2D
 @export var itemRes: InventoryItem
 
 func _ready():
-	onDeath()
-
+	pass
+	#onDeath()		
+	
+func collect():
+	$Area2D/CollisionPolygon2D/pickUpBox.play("fade-left")
+	print("collected slimeball")
+	queue_free()
+	
 func onDeath():
 	randomize()
 	var randomSelect = randi_range(1,2)
@@ -24,3 +30,11 @@ func onDeath():
 		$Area2D/CollisionPolygon2D/pickUpBox.play("fade-left")
 		print("+1 slimeball")
 		queue_free()
+
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_method("player"):
+		collect()
+
