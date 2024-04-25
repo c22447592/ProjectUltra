@@ -50,20 +50,20 @@ text = "Chatting..."
 
 [node name="npcMumble1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ciit7")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="npcMumble2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_7rrcn")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="npcMumble3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_k0yg6")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="npcMumble4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_qax1a")
-volume_db = -20.0
+volume_db = -5.0
 
 [node name="npcMumble5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_j3o1p")
-volume_db = -20.0
+volume_db = -5.0

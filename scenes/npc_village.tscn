@@ -22142,7 +22142,7 @@ limit_bottom = -20
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ta2g0")
-collision_visibility_mode = 1
+collision_visibility_mode = 2
 format = 2
 layer_0/name = "0"
 layer_0/z_index = -2

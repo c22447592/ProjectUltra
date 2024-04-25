@@ -760,8 +760,7 @@ position = Vector2(-2, 12)
 sprite_frames = SubResource("SpriteFrames_qcns2")
 animation = &"getUp"
 autoplay = "getUp"
-frame = 39
-frame_progress = 0.112425
+frame_progress = 0.375999
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8qmf2")
@@ -830,8 +829,10 @@ volume_db = -20.0
 autoplay = true
 
 [node name="scream" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [node name="steps" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 13.66
