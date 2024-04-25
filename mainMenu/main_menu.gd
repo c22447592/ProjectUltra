@@ -6,7 +6,7 @@ extends Control
 @onready var load_button = $MarginContainer/HBoxContainer/VBoxContainer/load_button
 @onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/exit_button
 @onready var options_button = $MarginContainer/HBoxContainer/VBoxContainer/options_button
-@onready var start_game = preload("res://scenes/beach.tscn") as PackedScene
+@onready var start_game = preload("res://openingCutscene/openingCutscene.tscn") as PackedScene
 
 func _ready():
 	start_button.button_down.connect(on_start_pressed)
