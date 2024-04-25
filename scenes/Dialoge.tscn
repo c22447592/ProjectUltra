@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://enjmsupjrs77"]
+[gd_scene load_steps=8 format=3 uid="uid://enjmsupjrs77"]
 
 [ext_resource type="Script" path="res://script/Dialoge.gd" id="1_wualh"]
 [ext_resource type="Texture2D" uid="uid://bbme167tgu0dv" path="res://UI/Slot.png" id="2_mg6vw"]
+[ext_resource type="AudioStream" uid="uid://b05wkkkyaqdls" path="res://audio/sfx/npc/1.mp3" id="3_ciit7"]
+[ext_resource type="AudioStream" uid="uid://btimeokiq5iuh" path="res://audio/sfx/npc/2.mp3" id="4_7rrcn"]
+[ext_resource type="AudioStream" uid="uid://nyl8ydpd74bd" path="res://audio/sfx/npc/3.mp3" id="5_k0yg6"]
+[ext_resource type="AudioStream" uid="uid://4byl4sfkebqh" path="res://audio/sfx/npc/4.mp3" id="6_qax1a"]
+[ext_resource type="AudioStream" uid="uid://by61jg4skovnb" path="res://audio/sfx/npc/5.mp3" id="7_j3o1p"]
 
 [node name="Dialoge" type="Control"]
 layout_mode = 3
@@ -42,3 +47,23 @@ offset_right = 278.0
 offset_bottom = 109.0
 scale = Vector2(0.2, 0.2)
 text = "Chatting..."
+
+[node name="npcMumble1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ciit7")
+volume_db = -20.0
+
+[node name="npcMumble2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7rrcn")
+volume_db = -20.0
+
+[node name="npcMumble3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_k0yg6")
+volume_db = -20.0
+
+[node name="npcMumble4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qax1a")
+volume_db = -20.0
+
+[node name="npcMumble5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_j3o1p")
+volume_db = -20.0

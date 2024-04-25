@@ -9,6 +9,29 @@ var player = null
 var can_take_damage = true
 var vel = Vector2()
 
+@onready var hit1 = $hit1
+@onready var hit2 = $hit2
+@onready var hit3 = $hit3
+@onready var hit4 = $hit4
+@onready var hit5 = $hit5
+@onready var hit6 = $hit5
+@onready var hit7 = $hit7
+@onready var hit8 = $hit8
+@onready var hit9 = $hit9
+@onready var hit10 = $hit10
+@onready var hit11 = $hit11
+@onready var hit12 = $hit12
+@onready var hit13 = $hit13
+@onready var hit14 = $hit14
+@onready var hit15 = $hit15
+@onready var hit16 = $hit16
+@onready var hit17 = $hit17
+@onready var hit18 = $hit18
+var hit
+
+@onready var slimeNoise1 = $slimeNoise1
+@onready var slimeNoise2 = $slimeNoise2
+
 func _physics_process(delta):
 	deal_with_sword_damage()
 	#update_health()
@@ -29,15 +52,22 @@ func _physics_process(delta):
 		vel = Vector2.ZERO  # Reset velocity when player not detected
 		$AnimatedSprite2D.play("static")
 
+func choose(array):
+	array.shuffle()
+	return array.front()
 
 func _on_detection_area_body_entered(body):
 	if body.has_method("player"):
+		slimeNoise1.play()
+		slimeNoise2.play()
 		player_detected = true
 		player = body
 	
 
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
+		slimeNoise1.stop()
+		slimeNoise2.stop()
 		player_detected = false
 
 
@@ -57,6 +87,8 @@ func _on_enemy_hitbox_body_exited(body):
 func deal_with_sword_damage():
 	if player_inattack_zone and Global.player_current_attack == true:
 		if can_take_damage == true:
+			hit = choose([hit1,hit2,hit3,hit4,hit5,hit6,hit7,hit8,hit9,hit10,hit11,hit12,hit13,hit14,hit15,hit16,hit17,hit18])
+			hit.play()
 			slime_health = slime_health - Global.sword_damage
 			$damage_cooldown.start()
 			can_take_damage = false

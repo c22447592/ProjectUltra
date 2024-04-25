@@ -1,7 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://sromdg3jdhr7"]
+[gd_scene load_steps=35 format=3 uid="uid://sromdg3jdhr7"]
 
 [ext_resource type="Script" path="res://script/green_slime.gd" id="1_hpr1c"]
 [ext_resource type="Texture2D" uid="uid://b00w02u1da1rt" path="res://mobs/green_slime.png" id="1_y47mi"]
+[ext_resource type="AudioStream" uid="uid://wvblcgtc68bp" path="res://audio/sfx/keep/hits/1.ogg" id="3_51rhy"]
+[ext_resource type="AudioStream" uid="uid://c1jl4s7ayjyvs" path="res://audio/sfx/keep/hits/2.ogg" id="4_crw0s"]
+[ext_resource type="AudioStream" uid="uid://di1p7k86nshpl" path="res://audio/sfx/keep/hits/3.ogg" id="5_ddi1c"]
+[ext_resource type="AudioStream" uid="uid://cpkdwy5dmxcag" path="res://audio/sfx/keep/hits/4.ogg" id="6_d4cg0"]
+[ext_resource type="AudioStream" uid="uid://c3no1jk6j3k6b" path="res://audio/sfx/keep/hits/5.ogg" id="7_yg0bi"]
+[ext_resource type="AudioStream" uid="uid://bm2p737spv3n6" path="res://audio/sfx/keep/hits/6.ogg" id="8_q5wkp"]
+[ext_resource type="AudioStream" uid="uid://rlqyvlq4sm52" path="res://audio/sfx/keep/hits/7.ogg" id="9_im2ax"]
+[ext_resource type="AudioStream" uid="uid://cty4bwyrka2j3" path="res://audio/sfx/keep/hits/8.ogg" id="10_5n1fe"]
+[ext_resource type="AudioStream" uid="uid://enfixmgty4kk" path="res://audio/sfx/keep/hits/9.ogg" id="11_6fd85"]
+[ext_resource type="AudioStream" uid="uid://bcjarju2t4vhw" path="res://audio/sfx/keep/hits/10.ogg" id="12_dl60m"]
+[ext_resource type="AudioStream" uid="uid://8rxt4uj7jb0d" path="res://audio/sfx/keep/hits/11.ogg" id="13_rwfbo"]
+[ext_resource type="AudioStream" uid="uid://c17s3sorpgeam" path="res://audio/sfx/keep/hits/12.ogg" id="14_h3x7n"]
+[ext_resource type="AudioStream" uid="uid://bvyfn2rb7f41w" path="res://audio/sfx/keep/hits/13.ogg" id="15_yt6dj"]
+[ext_resource type="AudioStream" uid="uid://jnnbfivmp7wk" path="res://audio/sfx/keep/hits/14.ogg" id="16_018iw"]
+[ext_resource type="AudioStream" uid="uid://vl5dblmryjfc" path="res://audio/sfx/keep/hits/15.ogg" id="17_cxjuf"]
+[ext_resource type="AudioStream" uid="uid://cdaj8bchyc80q" path="res://audio/sfx/keep/hits/16.ogg" id="18_rwyjg"]
+[ext_resource type="AudioStream" uid="uid://bou5t6wpkyt6e" path="res://audio/sfx/keep/hits/17.ogg" id="19_y5j7c"]
+[ext_resource type="AudioStream" uid="uid://q21kbbc3crrh" path="res://audio/sfx/keep/hits/18.ogg" id="20_j3bwv"]
+[ext_resource type="AudioStream" uid="uid://bkdit2jrg5lfb" path="res://audio/sfx/slime/squishy_flesh_thingy_seamless-30033.mp3" id="21_u88vt"]
+[ext_resource type="AudioStream" uid="uid://bqwhpljr45cl8" path="res://audio/sfx/slime/slime-monster-noises-66776.mp3" id="22_1getv"]
+[ext_resource type="AudioStream" uid="uid://bwtfm67u53bes" path="res://audio/sfx/slime/sfx_gross-guts-slime-goo-33112.mp3" id="23_ma5hs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dh8xa"]
 radius = 8.0
@@ -112,6 +133,91 @@ shape = SubResource("CircleShape2D_v5c7w")
 [node name="damage_cooldown" type="Timer" parent="."]
 
 [node name="lootDrop" type="Marker2D" parent="."]
+
+[node name="hit1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_51rhy")
+volume_db = -20.0
+
+[node name="hit2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_crw0s")
+volume_db = -20.0
+
+[node name="hit3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ddi1c")
+volume_db = -20.0
+
+[node name="hit4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_d4cg0")
+volume_db = -20.0
+
+[node name="hit5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_yg0bi")
+volume_db = -20.0
+
+[node name="hit6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q5wkp")
+volume_db = -20.0
+
+[node name="hit7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_im2ax")
+volume_db = -20.0
+
+[node name="hit8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5n1fe")
+volume_db = -20.0
+
+[node name="hit9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_6fd85")
+volume_db = -20.0
+
+[node name="hit10" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_dl60m")
+volume_db = -20.0
+
+[node name="hit11" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rwfbo")
+volume_db = -20.0
+
+[node name="hit12" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_h3x7n")
+volume_db = -20.0
+
+[node name="hit13" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_yt6dj")
+volume_db = -20.0
+
+[node name="hit14" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_018iw")
+volume_db = -20.0
+
+[node name="hit15" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_cxjuf")
+volume_db = -20.0
+
+[node name="hit16" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_rwyjg")
+volume_db = -20.0
+
+[node name="hit17" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_y5j7c")
+volume_db = -20.0
+
+[node name="hit18" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_j3bwv")
+volume_db = -20.0
+
+[node name="slimeNoise1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_u88vt")
+volume_db = -30.0
+
+[node name="slimeNoise2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_1getv")
+volume_db = -30.0
+
+[node name="slimeNoise3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_ma5hs")
+volume_db = -50.0
+autoplay = true
 
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]

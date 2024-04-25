@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="21_sgejj"]
 [ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="22_skig0"]
-[ext_resource type="AudioStream" uid="uid://y0vcarmhiiyl" path="res://audio/sfx/water.mp3" id="23_54bqh"]
+[ext_resource type="AudioStream" uid="uid://y0vcarmhiiyl" path="res://audio/sfx/water/water.mp3" id="23_54bqh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3p83"]
 tile_data = PackedInt32Array(0, 65550, 25)

@@ -15,23 +15,20 @@ var input_disabled = false #stops the player from attacking or moving after deat
 
 @onready var footsteps = $footstep
 
-@onready var sword1 = $sword1
-@onready var sword2 = $sword2
-@onready var sword3 = $sword3
-@onready var sword4 = $sword4
-@onready var sword5 = $sword5
-@onready var sword6 = $sword6
-@onready var sword7 = $sword7
-@onready var sword8 = $sword8
-@onready var sword9 = $sword9
-@onready var sword10 = $sword10
-
 @onready var swing1 = $swing1
 @onready var swing2 = $swing2
 @onready var swing3 = $swing3
+@onready var gameOver = $gameOver
+@onready var death1 = $death1
+@onready var death2 = $death2
+@onready var death3 = $death3
+@onready var death4 = $death4
+@onready var death5 = $death5
+@onready var death6 = $death6
+@onready var death7 = $death7
 
-var sword
 var swing
+var death
 
 
 
@@ -175,9 +172,7 @@ func attack():
 	if Input.is_action_just_pressed("attack"):
 		Global.player_current_attack = true
 		attack_in_progress = true
-		sword = choose([sword1,sword2,sword3,sword4,sword5,sword6,sword7,sword8,sword9,sword10])
 		swing = choose([swing1,swing2,swing3])
-		#sword.play()
 		swing.play()
 		if dir == "right":
 			$AnimatedSprite2D.play("attack-sword-right")
@@ -202,6 +197,9 @@ func _on_deal_attack_timer_timeout():
 func die():
 	if GameData.player_health <= 0:
 		player_alive = false
+		death = choose([death1,death2,death3,death4,death5,death6,death7,])
+		gameOver.play()
+		death.play()
 		$AnimatedSprite2D.play("death")
 		$CollisionShape2D.disabled = true
 		print("You have been vanquished.")
