@@ -13,7 +13,8 @@ func update(slot: InventorySlot):
 		backgroundSprite.frame=1
 		ItemSprite.visible=true
 		ItemSprite.texture=slot.item.texture
-		amount_text.visible=true
+		if slot.amount > 1:
+			amount_text.visible=true
 		amount_text.text= str(slot.amount)
 		
 
