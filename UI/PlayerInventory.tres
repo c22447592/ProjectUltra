@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://be2hq5bpwjvey" path="res://UI/apple.tres" id="1_2cqep"]
 [ext_resource type="Resource" uid="uid://b06sg8acjm5vx" path="res://UI/sword.tres" id="2_u3v1k"]
 [ext_resource type="Script" path="res://Inventory.gd" id="3_ceblc"]
-[ext_resource type="Resource" path="res://UI/Slimeball.tres" id="3_ds46j"]
+[ext_resource type="Resource" uid="uid://bby5jhohr1tuj" path="res://UI/Slimeball.tres" id="3_ds46j"]
 
 [resource]
 script = ExtResource("3_ceblc")
