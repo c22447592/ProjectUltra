@@ -207,4 +207,3 @@ func die():
 		$CollisionShape2D.disabled = true
 		print("You have been vanquished.")
 		input_disabled = true
-		
