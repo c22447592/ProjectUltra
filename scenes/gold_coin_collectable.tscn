@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://o4fss00m7g8o"]
+[gd_scene load_steps=16 format=3 uid="uid://o4fss00m7g8o"]
 
 [ext_resource type="Script" path="res://script/gold_coin_collectable.gd" id="1_sm7vn"]
+[ext_resource type="Resource" uid="uid://qvrjo7d21d3v" path="res://UI/Coin.tres" id="2_fgb8j"]
 [ext_resource type="Texture2D" uid="uid://lc318xt2guye" path="res://art/Items/mobLoot/coin.png" id="2_paelx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_me0sn"]
@@ -209,6 +210,33 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_op7vg"]
+resource_name = "fade-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_g73un"]
 resource_name = "lootDropped-left"
 tracks/0/type = "value"
@@ -263,33 +291,6 @@ tracks/1/keys = {
 "values": [0.0, -0.708604, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_op7vg"]
-resource_name = "fade-right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 13)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsqrt"]
 _data = {
 "fade-left": SubResource("Animation_amuvk"),
@@ -300,6 +301,7 @@ _data = {
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_sm7vn")
+item = ExtResource("2_fgb8j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -323,3 +325,5 @@ polygon = PackedVector2Array(-6, 15, -6, 11, -6, 11, -7, 10, -9, 10, -10, 11, -1
 libraries = {
 "": SubResource("AnimationLibrary_gsqrt")
 }
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
