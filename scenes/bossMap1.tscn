@@ -7228,16 +7228,14 @@ anchor_bottom = 0.015
 scale = Vector2(1.4, 1.4)
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("16_7dv4m")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.5
-offset_top = -81.5
-offset_right = 139.5
-offset_bottom = 81.5
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.1
+anchor_right = 0.02
+anchor_bottom = 0.1
+offset_bottom = 163.0
+grow_vertical = 1
+scale = Vector2(1.5, 1.5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="closed" from="CanvasLayer/Inventory" to="." method="_on_inventory_closed"]
