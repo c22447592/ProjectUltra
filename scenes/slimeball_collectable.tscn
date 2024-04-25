@@ -300,6 +300,7 @@ _data = {
 }
 
 [node name="slimeball_collectable" type="Area2D"]
+
 script = ExtResource("1_qurv1")
 itemRes = ExtResource("2_phxox")
 
