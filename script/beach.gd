@@ -4,8 +4,8 @@ extends Node
 @onready var player=$testPlayer
 
 func _ready():
-	heartContainer.setMaxHearts(player.player_health)
-	heartContainer.updateHearts(player.player_health)
+	heartContainer.setMaxHearts(10)
+	heartContainer.updateHearts(GameData.player_health)
 	player.healthChanged.connect(heartContainer.updateHearts)
 
 func _process(delta):

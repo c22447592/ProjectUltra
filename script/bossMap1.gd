@@ -36,3 +36,9 @@ func spawn_slimes(number_of_slimes, area_rect):
 		)
 		slime_instance.position = random_position
 		self.add_child(slime_instance)
+		
+func _on_inventory_closed():
+	get_tree().paused=false
+
+func _on_inventory_opened():
+	get_tree().paused=true

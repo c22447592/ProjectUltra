@@ -1,35 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://d07ytecjs0o74"]
+[gd_scene load_steps=16 format=3 uid="uid://d07ytecjs0o74"]
 
+[ext_resource type="Script" path="res://script/slimeball_collectable.gd" id="1_qurv1"]
+[ext_resource type="Resource" uid="uid://bby5jhohr1tuj" path="res://UI/Slimeball.tres" id="2_phxox"]
 [ext_resource type="Texture2D" uid="uid://btv108k7rgbc5" path="res://art/Items/mobLoot/slimeBall.png" id="2_r14y8"]
-
-[sub_resource type="GDScript" id="GDScript_k3hc3"]
-script/source = "extends Area2D
-
-@export var itemRes: InventoryItem
-
-func _ready():
-	onDeath()
-
-func onDeath():
-	randomize()
-	var randomSelect = randi_range(1,2)
-	if randomSelect == 1:
-		$AnimationPlayer.play(\"lootDropped-right\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-right\")
-		await get_tree().create_timer(10).timeout
-		$AnimationPlayer.play(\"fade-right\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-right\")
-		print(\"+1 slimeball\")
-		queue_free()
-	else:
-		$AnimationPlayer.play(\"lootDropped-left\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-left\")
-		await get_tree().create_timer(10).timeout
-		$AnimationPlayer.play(\"fade-left\")
-		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-left\")
-		print(\"+1 slimeball\")
-		queue_free()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbxsw"]
 atlas = ExtResource("2_r14y8")
@@ -237,6 +210,33 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_op7vg"]
+resource_name = "fade-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_g73un"]
 resource_name = "lootDropped-left"
 tracks/0/type = "value"
@@ -291,33 +291,6 @@ tracks/1/keys = {
 "values": [0.0, -0.708604, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_op7vg"]
-resource_name = "fade-right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 13)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsqrt"]
 _data = {
 "fade-left": SubResource("Animation_amuvk"),
@@ -327,7 +300,8 @@ _data = {
 }
 
 [node name="slimeball_collectable" type="Area2D"]
-script = SubResource("GDScript_k3hc3")
+script = ExtResource("1_qurv1")
+itemRes = ExtResource("2_phxox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, 13)
