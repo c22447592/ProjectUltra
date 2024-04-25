@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d07ytecjs0o74"]
+[gd_scene load_steps=15 format=3 uid="uid://d07ytecjs0o74"]
 
 [ext_resource type="Texture2D" uid="uid://btv108k7rgbc5" path="res://art/Items/mobLoot/slimeBall.png" id="2_r14y8"]
 
@@ -15,14 +15,18 @@ func onDeath():
 	var randomSelect = randi_range(1,2)
 	if randomSelect == 1:
 		$AnimationPlayer.play(\"lootDropped-right\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-right\")
 		await get_tree().create_timer(10).timeout
 		$AnimationPlayer.play(\"fade-right\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-right\")
 		print(\"+1 slimeball\")
 		queue_free()
 	else:
 		$AnimationPlayer.play(\"lootDropped-left\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-left\")
 		await get_tree().create_timer(10).timeout
 		$AnimationPlayer.play(\"fade-left\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-left\")
 		print(\"+1 slimeball\")
 		queue_free()
 "
@@ -206,11 +210,126 @@ _data = {
 "lootDropped-right": SubResource("Animation_ae6hr")
 }
 
+[sub_resource type="Animation" id="Animation_amuvk"]
+resource_name = "fade-left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g73un"]
+resource_name = "lootDropped-left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-5, 1), Vector2(-8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.708604, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bk8ua"]
+resource_name = "lootDropped-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 1), Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.708604, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_op7vg"]
+resource_name = "fade-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsqrt"]
+_data = {
+"fade-left": SubResource("Animation_amuvk"),
+"fade-right": SubResource("Animation_op7vg"),
+"lootDropped-left": SubResource("Animation_g73un"),
+"lootDropped-right": SubResource("Animation_bk8ua")
+}
+
 [node name="slimeball_collectable" type="Area2D"]
 script = SubResource("GDScript_k3hc3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-8, 13)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_mm4y6")
 
@@ -219,3 +338,18 @@ root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_uh3hi")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(8, -13)
+build_mode = 1
+polygon = PackedVector2Array(-9, 10, -7, 10, -5, 10, -5, 12, -5, 14, -5, 16, -7, 16, -9, 16, -11, 16, -11, 14, -11, 12, -11, 10)
+
+[node name="pickUpBox" type="AnimationPlayer" parent="Area2D/CollisionPolygon2D"]
+libraries = {
+"": SubResource("AnimationLibrary_gsqrt")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(9, 9)

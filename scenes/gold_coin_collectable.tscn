@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://o4fss00m7g8o"]
+[gd_scene load_steps=15 format=3 uid="uid://o4fss00m7g8o"]
 
 [ext_resource type="Texture2D" uid="uid://lc318xt2guye" path="res://art/Items/mobLoot/coin.png" id="2_paelx"]
 
@@ -14,15 +14,19 @@ func onDeath():
 	var randomSelect = randi_range(1,2)
 	if randomSelect == 1:
 		$AnimationPlayer.play(\"lootDropped-right\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-right\")
 		await get_tree().create_timer(1.5).timeout
 		$AnimationPlayer.play(\"fade-right\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-right\")
 		print(\"+1 gold coin\")
 		await get_tree().create_timer(.3).timeout
 		queue_free()
 	else:
 		$AnimationPlayer.play(\"lootDropped-left\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"lootDropped-left\")
 		await get_tree().create_timer(1.5).timeout
 		$AnimationPlayer.play(\"fade-left\")
+		$Area2D/CollisionPolygon2D/pickUpBox.play(\"fade-left\")
 		print(\"+1 gold coint\")
 		await get_tree().create_timer(.3).timeout
 		queue_free()
@@ -208,11 +212,126 @@ _data = {
 "lootDropped-right": SubResource("Animation_ae6hr")
 }
 
+[sub_resource type="Animation" id="Animation_amuvk"]
+resource_name = "fade-left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g73un"]
+resource_name = "lootDropped-left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-5, 1), Vector2(-8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.708604, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bk8ua"]
+resource_name = "lootDropped-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, 1), Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.708604, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_op7vg"]
+resource_name = "fade-right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 13)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsqrt"]
+_data = {
+"fade-left": SubResource("Animation_amuvk"),
+"fade-right": SubResource("Animation_op7vg"),
+"lootDropped-left": SubResource("Animation_g73un"),
+"lootDropped-right": SubResource("Animation_bk8ua")
+}
+
 [node name="Area2D" type="Area2D"]
 script = SubResource("GDScript_y03bi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-8, 13)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x012u")
 animation = &"coin"
@@ -221,4 +340,16 @@ animation = &"coin"
 root_node = NodePath("../AnimatedSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_uh3hi")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-8, 13)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(8, -13)
+polygon = PackedVector2Array(-6, 15, -6, 11, -6, 11, -7, 10, -9, 10, -10, 11, -10, 15, -9, 16, -7, 16)
+
+[node name="pickUpBox" type="AnimationPlayer" parent="Area2D/CollisionPolygon2D"]
+libraries = {
+"": SubResource("AnimationLibrary_gsqrt")
 }
