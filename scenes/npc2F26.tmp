@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bhgc8lvsqv5ou"]
+[gd_scene load_steps=37 format=3 uid="uid://bhgc8lvsqv5ou"]
 
 [ext_resource type="Script" path="res://script/npc_village.gd" id="1_ta2s6"]
 [ext_resource type="Texture2D" uid="uid://clq2q68gkhb6w" path="res://tilesets/forest-tileset/PNG/Ground_grass.png" id="2_1imyf"]
@@ -20,8 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="18_2rckj"]
 [ext_resource type="PackedScene" uid="uid://c66qlmo08130p" path="res://scenes/npc1.tscn" id="19_eveod"]
 [ext_resource type="AudioStream" uid="uid://cttta8sa7iu4b" path="res://audio/music/forest.mp3" id="20_eev8c"]
-[ext_resource type="Script" path="res://script/CanvasLayer.gd" id="21_257um"]
-[ext_resource type="PackedScene" uid="uid://hcdl5tnr716o" path="res://scenes/game_menu.tscn" id="24_0y76v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf2yx"]
 texture = ExtResource("2_1imyf")
@@ -22193,9 +22191,3 @@ stream = ExtResource("20_eev8c")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("21_257um")
-
-[node name="game_menu" parent="CanvasLayer" instance=ExtResource("24_0y76v")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://wnpii5c0syul"]
+[gd_scene load_steps=28 format=3 uid="uid://wnpii5c0syul"]
 
 [ext_resource type="Script" path="res://script/bossMap1.gd" id="1_aucks"]
 [ext_resource type="Texture2D" uid="uid://clq2q68gkhb6w" path="res://tilesets/forest-tileset/PNG/Ground_grass.png" id="1_ijnah"]
@@ -14,9 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bn0axsit5u086" path="res://scenes/slimeKing.tscn" id="12_546ex"]
 [ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="13_pcxlc"]
 [ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="14_7yom1"]
-[ext_resource type="AudioStream" uid="uid://dv2q7nmoq88gw" path="res://audio/music/confrontation.ogg" id="14_cvqd8"]
+[ext_resource type="AudioStream" uid="uid://dv2q7nmoq88gw" path="res://audio/music/confrontation.ogg" id="14_i6ucu"]
 [ext_resource type="Script" path="res://script/CanvasLayer.gd" id="15_2vuh3"]
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="16_7dv4m"]
+[ext_resource type="PackedScene" uid="uid://hcdl5tnr716o" path="res://scenes/game_menu.tscn" id="18_rd4pl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b7uev"]
 texture = ExtResource("1_ijnah")
@@ -7204,7 +7205,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="bossMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_cvqd8")
+stream = ExtResource("14_i6ucu")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"
@@ -7236,6 +7237,9 @@ anchor_bottom = 0.1
 offset_bottom = 163.0
 grow_vertical = 1
 scale = Vector2(1.5, 1.5)
+
+[node name="game_menu" parent="CanvasLayer" instance=ExtResource("18_rd4pl")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="closed" from="CanvasLayer/Inventory" to="." method="_on_inventory_closed"]

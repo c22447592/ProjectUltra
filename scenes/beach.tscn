@@ -1,19 +1,15 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=10 format=3 uid="uid://daqx0hyg33hid"]
-=======
-[gd_scene load_steps=45 format=3 uid="uid://daqx0hyg33hid"]
->>>>>>> Stashed changes
+[gd_scene load_steps=11 format=3 uid="uid://daqx0hyg33hid"]
 
 [ext_resource type="Script" path="res://script/beach.gd" id="1_gajgq"]
 [ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_uue36"]
 [ext_resource type="TileSet" uid="uid://c6lltik2f4v7e" path="res://openingCutscene/beach.tres" id="3_awyea"]
+[ext_resource type="PackedScene" uid="uid://hcdl5tnr716o" path="res://scenes/game_menu.tscn" id="7_myba5"]
 [ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="18_2r4mf"]
 [ext_resource type="Script" path="res://script/CanvasLayer.gd" id="18_cr4v2"]
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="19_tvkf6"]
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="21_sgejj"]
 [ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="22_skig0"]
 [ext_resource type="AudioStream" uid="uid://y0vcarmhiiyl" path="res://audio/sfx/water/water.mp3" id="23_54bqh"]
-[ext_resource type="PackedScene" uid="uid://hcdl5tnr716o" path="res://scenes/game_menu.tscn" id="24_bjtud"]
 
 [node name="beachScene" type="Node2D"]
 y_sort_enabled = true
@@ -84,8 +80,7 @@ offset_bottom = 81.5
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 
-[node name="game_menu" parent="CanvasLayer" instance=ExtResource("24_bjtud")]
-visible = false
+[node name="game_menu" parent="CanvasLayer" instance=ExtResource("7_myba5")]
 
 [node name="transition" parent="." instance=ExtResource("21_sgejj")]
 visible = false

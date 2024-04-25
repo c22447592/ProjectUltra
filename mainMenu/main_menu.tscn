@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://l1auh0ybna6x" path="res://mainMenu/upheavtt.ttf" id="2_isrj3"]
 [ext_resource type="Texture2D" uid="uid://cdg0sdx5st4ku" path="res://UI/buttonRegular.png" id="4_nuhwp"]
 [ext_resource type="Texture2D" uid="uid://cxg0m5uifvid8" path="res://UI/buttonPressed.png" id="5_8qmge"]
-[ext_resource type="PackedScene" path="res://scenes/options_menu.tscn" id="6_au7vy"]
+[ext_resource type="PackedScene" uid="uid://gxavw04jr055" path="res://scenes/options_menu.tscn" id="6_au7vy"]
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3

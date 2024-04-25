@@ -4,6 +4,8 @@ extends Node2D
 @onready var player=$thePlayer
 @onready var audio_file1 = $bossMusic
 @onready var audio_file2 = $ambientForest
+@onready var game_menu = $CanvasLayer/game_menu as gameMenu
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,3 +44,12 @@ func _on_inventory_closed():
 
 func _on_inventory_opened():
 	get_tree().paused=true
+	
+func _input(event):
+	if event.is_action_pressed("esc"):
+		if game_menu.visible == true: #open
+			game_menu.visible = false
+			
+		elif game_menu.visible == false: ##closed
+			game_menu.visible = true
+			
