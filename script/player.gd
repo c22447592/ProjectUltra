@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var current_health = GameData.player_health
 var speed = 100
 var player_state
 var current_dir = "none"
@@ -116,30 +117,6 @@ func play_anim(movement):
 	
 	move_and_slide()
 		
-	#Movement type 2 (better for 8-directional movement)
-	#var direction = Input.get_vector("left", "right", "up", "down")
-	#if direction.x == 0 and direction.y == 0:
-		#player_state = "idle"
-	#elif direction.x != 0 or direction.y != 0:
-		#player_state = "walking"
-		#
-	#velocity = direction * speed
-	#move_and_slide()
-	#
-	#play_anim(direction)
-#
-#func play_anim(dir):
-	#if player_state == "idle":
-		#$AnimatedSprite2D.play("idle-front")
-	#if player_state == "walking":
-		#if dir.y == -1:
-			#$AnimatedSprite2D.play("walk-up")
-		#if dir.y == 1:
-			#$AnimatedSprite2D.play("walk-down")
-		#if dir.x == 1:
-			#$AnimatedSprite2D.play("walk-right")
-		#if dir.x == -1:
-			#$AnimatedSprite2D.play("walk-left")
 
 func player():
 	pass
@@ -188,10 +165,10 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	Global.player_current_attack = false 
 	attack_in_progress = false
-
+	
 
 func die():
-	if GameData.player_health <= 0:
+	if current_health <= 0:
 		player_alive = false
 		death = choose([death1,death2,death3,death4,death5,death6,death7,])
 		gameOver.play()
@@ -204,3 +181,40 @@ func die():
 func collect(item):
 	inventory.insert(item)
 	print("collected")
+
+func update_health():
+	pass
+	
+func _on_regen_timer_timeout():
+	if current_health < 10:
+		current_health = current_health + 1
+		print("Regen health = ", current_health)
+		if current_health > 10:
+			current_health = 10
+	elif current_health <= 0:
+		current_health = 0
+
+	#Movement type 2 (better for 8-directional movement)
+	#var direction = Input.get_vector("left", "right", "up", "down")
+	#if direction.x == 0 and direction.y == 0:
+		#player_state = "idle"
+	#elif direction.x != 0 or direction.y != 0:
+		#player_state = "walking"
+		#
+	#velocity = direction * speed
+	#move_and_slide()
+	#
+	#play_anim(direction)
+#
+#func play_anim(dir):
+	#if player_state == "idle":
+		#$AnimatedSprite2D.play("idle-front")
+	#if player_state == "walking":
+		#if dir.y == -1:
+			#$AnimatedSprite2D.play("walk-up")
+		#if dir.y == 1:
+			#$AnimatedSprite2D.play("walk-down")
+		#if dir.x == 1:
+			#$AnimatedSprite2D.play("walk-right")
+		#if dir.x == -1:
+			#$AnimatedSprite2D.play("walk-left")
