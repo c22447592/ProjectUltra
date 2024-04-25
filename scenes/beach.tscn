@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=3 uid="uid://daqx0hyg33hid"]
+=======
+[gd_scene load_steps=45 format=3 uid="uid://daqx0hyg33hid"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://script/beach.gd" id="1_gajgq"]
 [ext_resource type="PackedScene" uid="uid://dslejir40ph3w" path="res://scenes/thePlayer.tscn" id="2_uue36"]
@@ -9,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="21_sgejj"]
 [ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="22_skig0"]
 [ext_resource type="AudioStream" uid="uid://y0vcarmhiiyl" path="res://audio/sfx/water/water.mp3" id="23_54bqh"]
+[ext_resource type="PackedScene" uid="uid://hcdl5tnr716o" path="res://scenes/game_menu.tscn" id="24_bjtud"]
 
 [node name="beachScene" type="Node2D"]
 y_sort_enabled = true
@@ -78,6 +83,9 @@ offset_right = 139.5
 offset_bottom = 81.5
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
+
+[node name="game_menu" parent="CanvasLayer" instance=ExtResource("24_bjtud")]
+visible = false
 
 [node name="transition" parent="." instance=ExtResource("21_sgejj")]
 visible = false
