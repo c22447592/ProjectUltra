@@ -10,7 +10,7 @@ func _ready():
 	randomize()
 	var spawn_area = Rect2(Vector2(-267,89), Vector2(647,375))
 	spawn_slimes(10, spawn_area)
-	heartContainer.setMaxHearts(10)
+	heartContainer.setMaxHearts(10 )
 	heartContainer.updateHearts(GameData.player_health)
 	player.healthChanged.connect(heartContainer.updateHearts)
 	audio_file2.play()
