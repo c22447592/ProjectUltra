@@ -204,3 +204,7 @@ func die():
 		$CollisionShape2D.disabled = true
 		print("You have been vanquished.")
 		input_disabled = true
+		
+func collect(item):
+	inventory.insert(item)
+	print("collected")
