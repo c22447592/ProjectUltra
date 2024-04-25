@@ -1,6 +1,5 @@
 extends CharacterBody2D
 var speed = 100
-var player_health = 10
 var player_state
 signal healthChanged
 var current_dir = "none"
@@ -162,11 +161,11 @@ func _on_player_hitbox_body_exited(body):
 		
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		player_health = player_health - 1
+		GameData.damage()
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
-		print("Player health is ", player_health)
-		healthChanged.emit(player_health)
+		print("Player health is ", GameData.player_health)
+		healthChanged.emit(GameData.player_health)
 		
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
@@ -201,10 +200,9 @@ func _on_deal_attack_timer_timeout():
 
 
 func die():
-	if player_health <= 0:
+	if GameData.player_health <= 0:
 		player_alive = false
 		$AnimatedSprite2D.play("death")
 		$CollisionShape2D.disabled = true
 		print("You have been vanquished.")
 		input_disabled = true
-		
