@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d07ytecjs0o74"]
 
 [ext_resource type="Script" path="res://script/slimeball_collectable.gd" id="1_mpray"]
-[ext_resource type="Resource" uid="uid://bby5jhohr1tuj" path="res://UI/Slimeball.tres" id="2_o3k04"]
+[ext_resource type="Resource" path="res://UI/Slimeball.tres" id="2_o3k04"]
 [ext_resource type="Texture2D" uid="uid://btv108k7rgbc5" path="res://art/Items/mobLoot/slimeBall.png" id="2_r14y8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbxsw"]
