@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cfuxuoku6bkf0" path="res://scenes/transition.tscn" id="10_0su5y"]
 [ext_resource type="Resource" uid="uid://bk3a8cxamwh6j" path="res://UI/PlayerInventory.tres" id="10_rjoeo"]
 [ext_resource type="PackedScene" uid="uid://bn0axsit5u086" path="res://scenes/slimeKing.tscn" id="12_546ex"]
-[ext_resource type="AudioStream" uid="uid://cirdob3iu7288" path="res://audio/music/boss.ogg" id="13_jpp20"]
 [ext_resource type="PackedScene" uid="uid://b5xjt874nqvkw" path="res://scenes/HeartsContainer.tscn" id="13_pcxlc"]
 [ext_resource type="AudioStream" uid="uid://cuv4c32xwp881" path="res://audio/music/Forest_Ambience.mp3" id="14_7yom1"]
+[ext_resource type="AudioStream" uid="uid://dv2q7nmoq88gw" path="res://audio/music/confrontation.ogg" id="14_cvqd8"]
 [ext_resource type="Script" path="res://script/CanvasLayer.gd" id="15_2vuh3"]
 [ext_resource type="PackedScene" uid="uid://b0q5li2g5dfki" path="res://scenes/InventoryGUI.tscn" id="16_7dv4m"]
 
@@ -7204,7 +7204,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="bossMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_jpp20")
+stream = ExtResource("14_cvqd8")
 volume_db = -15.0
 autoplay = true
 bus = &"Music"

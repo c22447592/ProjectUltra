@@ -7,7 +7,8 @@ extends Control
 @onready var options_button = $MarginContainer/HBoxContainer/VBoxContainer/options_button
 @onready var options_menu = $options_menu as OptionsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
-@onready var start_game = preload("res://scenes/beach.tscn") as PackedScene
+@onready var start_game = preload("res://openingCutscene/openingCutscene.tscn") as PackedScene
+
 
 func _ready():
 	handle_signals()
