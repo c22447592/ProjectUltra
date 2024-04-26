@@ -10,6 +10,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	game_menu.visible = false
 	var spawn_area = Rect2(Vector2(-267,89), Vector2(647,375))
 	spawn_slimes(10, spawn_area)
 	heartContainer.setMaxHearts(10 )
