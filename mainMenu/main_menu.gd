@@ -10,7 +10,9 @@ extends Control
 @onready var start_game = preload("res://openingCutscene/openingCutscene.tscn") as PackedScene
 
 
+
 func _ready():
+	
 	handle_signals()
 	
 func on_start_pressed() -> void: #start button

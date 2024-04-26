@@ -54,7 +54,7 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("2_isrj3")
 theme_override_font_sizes/font_size = 80
-text = "GAME TITLE"
+text = "EMERALD ISLE"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var slime_health = 80
-var speed = 75
+var speed = 50
 
 var player_inattack_zone = false
 var player_detected = false
@@ -40,7 +40,7 @@ func _physics_process(delta):
 	if player_detected == true:
 		#increasing speed variable slows down the enemy
 		var direction = (player.position - position).normalized()
-		vel = vel.lerp(direction * speed, 10 * delta)
+		vel = vel.lerp(direction * speed, 15 * delta)
 		position += vel * delta
 		$AnimatedSprite2D.play("move")
 		

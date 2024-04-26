@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  game_menu.visible = false
+	game_menu.visible = false
 	heartContainer.setMaxHearts(10 )
 	heartContainer.updateHearts(GameData.player_health)
 	player.healthChanged.connect(heartContainer.updateHearts)

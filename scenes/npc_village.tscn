@@ -22204,11 +22204,17 @@ script = ExtResource("21_257um")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("24_75b18")]
 anchors_preset = -1
-anchor_left = 0.02
-anchor_top = 0.5
-anchor_right = 0.02
-anchor_bottom = 0.7
+anchor_left = 0.046875
+anchor_top = 0.0972222
+anchor_right = 0.410156
+anchor_bottom = 0.474537
+offset_left = -25.0
+offset_top = -24.0
+offset_right = -164.5
+offset_bottom = -105.5
+grow_vertical = 1
 scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" parent="CanvasLayer" instance=ExtResource("22_e520n")]
 anchors_preset = -1

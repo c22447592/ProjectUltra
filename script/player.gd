@@ -1,5 +1,4 @@
 extends CharacterBody2D
-var current_health = GameData.player_health
 var speed = 100
 var player_state
 var current_dir = "none"
@@ -10,6 +9,7 @@ var attack_in_progress = false
 var sprint_state = false #while holding left shoft player gets speed turned to 150 
 var input_disabled = false #stops the player from attacking or moving after death
 signal healthChanged
+signal timeout
 
 
 @export var inventory:Inventory
@@ -25,6 +25,9 @@ signal healthChanged
 @onready var death5 = $death5
 @onready var death6 = $death6
 @onready var death7 = $death7
+@onready var restart_game = preload("res://mainMenu/main_menu.tscn") as PackedScene
+@onready var death_timer = $death_timer
+
 
 var swing
 var death
@@ -168,7 +171,7 @@ func _on_deal_attack_timer_timeout():
 	
 
 func die():
-	if current_health <= 0:
+	if GameData.player_health <= 0:
 		player_alive = false
 		death = choose([death1,death2,death3,death4,death5,death6,death7,])
 		gameOver.play()
@@ -177,6 +180,14 @@ func die():
 		$CollisionShape2D.disabled = true
 		print("You have been vanquished.")
 		input_disabled = true
+		death_timer.one_shot = true
+		death_timer.start()
+
+		
+func restart():
+	input_disabled = false
+	get_tree().change_scene_to_packed(restart_game)
+	
 		
 func collect(item):
 	inventory.insert(item)
@@ -186,13 +197,13 @@ func update_health():
 	pass
 	
 func _on_regen_timer_timeout():
-	if current_health < 10:
-		current_health = current_health + 1
-		print("Regen health = ", current_health)
-		if current_health > 10:
-			current_health = 10
-	elif current_health <= 0:
-		current_health = 0
+	if GameData.player_health < 10:
+		GameData.player_health = GameData.player_health + 1
+		print("Regen health = ", GameData.player_health)
+		if GameData.player_health > 10:
+			GameData.player_health = 10
+	elif GameData.player_health <= 0:
+		GameData.player_health = 0
 
 	#Movement type 2 (better for 8-directional movement)
 	#var direction = Input.get_vector("left", "right", "up", "down")
@@ -218,3 +229,7 @@ func _on_regen_timer_timeout():
 			#$AnimatedSprite2D.play("walk-right")
 		#if dir.x == -1:
 			#$AnimatedSprite2D.play("walk-left")
+
+
+func _on_death_timer_timeout():
+	restart()

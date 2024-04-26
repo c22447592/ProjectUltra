@@ -1,5 +1,6 @@
 extends Node
 
+
 var player_health = 10
 
 func damage():

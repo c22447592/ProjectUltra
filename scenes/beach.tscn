@@ -69,16 +69,15 @@ scale = Vector2(1.4, 1.4)
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("19_tvkf6")]
 anchors_preset = -1
-anchor_left = 0.43
-anchor_top = 0.45
-anchor_right = 0.43
-anchor_bottom = 0.45
-offset_left = -139.5
-offset_top = -81.5
-offset_right = 139.5
-offset_bottom = 81.5
-grow_horizontal = 2
-scale = Vector2(2.5, 2.5)
+anchor_right = 0.363281
+anchor_bottom = 0.377315
+offset_left = 17.0
+offset_top = 20.0
+offset_right = -122.5
+offset_bottom = -61.5
+grow_vertical = 1
+scale = Vector2(1.5, 1.5)
+metadata/_edit_use_anchors_ = true
 
 [node name="game_menu" parent="CanvasLayer" instance=ExtResource("7_myba5")]
 
