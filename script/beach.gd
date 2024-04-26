@@ -5,6 +5,7 @@ extends Node
 @onready var game_menu = $CanvasLayer/game_menu as gameMenu
 
 func _ready():
+	game_menu.visible = false
 	heartContainer.setMaxHearts(10)
 	heartContainer.updateHearts(GameData.player_health)
 	player.healthChanged.connect(heartContainer.updateHearts)
