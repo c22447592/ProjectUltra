@@ -6,7 +6,7 @@ Project Roles
 -----------------------------------------------------------
 Amir - Mob & Boss Design, GitHub Expert, General Artwork
 
-Michael - Map Design, Y-Sorting, NPCs, Music, SFX & Cutscene
+Michael Walsh (c22414152) - Map Design, Y-Sorting, NPCs, Music, SFX & Cutscene
 
 Adam - Player Design, Function, Scripting & Combat System
 
