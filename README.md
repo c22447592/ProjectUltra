@@ -1,6 +1,7 @@
 Continuation on the HopeIslandDevelopment project. 
 -----------------------------------------------------------
 Needed new Repo as merge conflicts plagued original project which had over 50+ commits.
+https://github.com/c22447592/HopeIslandDevelopment.git
 
 Project Roles
 -----------------------------------------------------------
