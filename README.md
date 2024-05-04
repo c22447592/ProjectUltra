@@ -5,13 +5,13 @@ https://github.com/c22447592/HopeIslandDevelopment.git
 
 Project Roles
 -----------------------------------------------------------
-Amir - Mob & Boss Design, GitHub Expert, General Artwork
+Amir (C22447592)- Mob & Boss Design, General Artwork & Options
 
-Michael Walsh (c22414152) - Map Design, Y-Sorting, NPCs, Music, SFX & Cutscene
+Michael Walsh (C22414152) - Map Design, Y-Sorting, NPCs, Music, SFX & Cutscene
 
 Adam (C22370983) - Player Design, Function, Scripting & Combat System
 
-John - UI, Inventory & Title Screen
+John (C22789271)- UI, Inventory & Title Screen
 
 References
 -----------------------------------------------------------
